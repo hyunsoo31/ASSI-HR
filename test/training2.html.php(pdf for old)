@@ -1,0 +1,21 @@
+
+<!-- <main style="width: 1000px;">
+    <iframe width="100%" height="600" src="../test.pdf"></iframe>
+
+<button type="button" class="btn btn-outline-secondary" onclick="location.href='/lastcheck2'">last check</button>
+</main> -->
+<main style="width: 1200px;">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
+<div id="myPdf"></div>
+<button type="button" class="btn btn-outline-secondary" onclick="location.href='/lastcheck2'">last check</button>
+<script>
+var option =
+{
+        width: "1000px;",
+		height: "600px",
+		pdfOpenParams: {view: 'FitV', page: '2'}
+}
+PDFObject.embed("../uploads/T2/T2.pdf", "#myPdf", option);
+//PDFObject.embed("../pdf/examples/example_001.php", "#myPdf", option);
+</script>
+</main>
