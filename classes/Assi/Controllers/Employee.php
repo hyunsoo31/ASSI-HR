@@ -24,6 +24,9 @@ class Employee {
     $offset = ($page-1)*10;
     $author = $this-> authentication->getUser();
 
+    $trainings = $this->trainingTable->findAll();
+    $employeeTrainings = $this->employeeTrainingsTable->findAll();
+
     if(isset($_GET['store']) and $_GET['store']=='GA55')
     {
       $employees = $this->employeesTable->find('store', 'GA55', '', 10, $offset);
@@ -94,7 +97,7 @@ class Employee {
     // return ['output' => $output, 'title' => $title];
 
     return [
-    'template'=> 'employeeslist2.html.php',
+    'template'=> 'employeeslist.html.php',
      'title'=>$title,
      'variables'=> [
        'totalEmployees' => $totalEmployees,
@@ -105,7 +108,9 @@ class Employee {
        //'categories' =>$this->categoriesTable->findAll(),
        'currentPage' => $page,
        'store' => $_GET['store'] ?? null,
-       'author' => $author
+       'author' => $author,
+       'trainings'=>$trainings ?? null,
+       'employeeTrainings' => $employeeTrainings ?? null
       ]
     ];
 
@@ -231,22 +236,23 @@ class Employee {
       'variables' => [ 'employee' => $employee ?? null, 'author' => $employee, 'categories'=>$trainings]
     ];
   }
-  public function employeedetail() {
-    $author = $this->authentication->getUser();
-    $trainings = $this->trainingTable->findAll();
 
-    if (isset($_GET['id'])) {
-      $employee = $this->employeesTable->findById($_GET['id']);
-    }
+  // public function employeedetail() {
+  //   $author = $this->authentication->getUser();
+  //   $trainings = $this->trainingTable->findAll();
 
-    $title = '유머 글 수정';
+  //   if (isset($_GET['id'])) {
+  //     $employee = $this->employeesTable->findById($_GET['id']);
+  //   }
 
-    return [
-      'template' => 'employeedetail.html.php',
-      'title' => $title,
-      'variables' => [ 'employee' => $employee ?? null, 'author' => $author, 'trainings'=>$trainings]
-    ];
-  }
+  //   $title = '유머 글 수정';
+
+  //   return [
+  //     'template' => 'employeedetail.html.php',
+  //     'title' => $title,
+  //     'variables' => [ 'employee' => $employee ?? null, 'author' => $author, 'trainings'=>$trainings]
+  //   ];
+  // }
 
   public function employeedetail2() {
     $author = $this->authentication->getUser();
