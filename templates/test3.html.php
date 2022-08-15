@@ -15,6 +15,7 @@
           <button class="btn_test" type="button" name="button"></button>
           <button class="btn_test" type="button" name="button"></button>
           <button class="btn_test" type="button" name="button"></button>
+          
         </div>
         <footer id="quiz_footer">
           <p id="progress">진행 정보</p>

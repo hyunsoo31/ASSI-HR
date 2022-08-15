@@ -386,6 +386,7 @@ tr>th:nth-child(9), tr>td:nth-child(9) {
   box-shadow: 5px 5px 15px 5px gray;
   border-radius: 10px;
   width: 25vw;
+  margin: 10px auto;
 }
 
 *{

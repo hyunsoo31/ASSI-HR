@@ -14,7 +14,7 @@
 <input type="hidden" name="employee[id]" value="<?=$employee->id ?? ''?>">
 <div id="input_title">
 <!-- <div style="margin-bottom: 20px;"><h5 style="font-weight: bold;">ID: <?=$employee->id ?? '' ?></h5> </div> -->
-<div style="margin-bottom: 20px;"><span style="font-weight: 500; font-size: 2.6rem; margin-right:20px;">EEID:</span> <span style="font-weight: bold; font-size: 3.3rem;"><?=$employee->EEID ?? '' ?></span> </div>
+<div style="margin-bottom: 20px;"><span style="font-weight: 500; font-size: 2.6rem; margin-right:20px;">Employee ID:</span> <span style="font-weight: bold; font-size: 3.3rem;"><?=$employee->EEID ?? '' ?></span> </div>
 <div style="margin-bottom: 20px;"><span style="font-weight: 500; font-size: 2.6rem; margin-right:20px;">first name:</span> <span style="font-weight: bold; font-size: 3.3rem;"><?=$employee->firstName ?? '' ?></span> </div>
 <!-- <div style="margin-bottom: 20px;"><h5 style="font-weight: bold;">first name: <?=$employee->firstName ?? '' ?></h5> </div> -->
 </div>
@@ -51,7 +51,7 @@
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_eng'">T1(ENG)</button>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_spn'">T1(SPN)</button>
       <?php endif; ?>
-      <?php if($employeetraining->title == 'T1' && $employeetraining->result == "pass"):?>
+      <?php if($employeetraining->title == 'T1' && $employeetraining->result == "pass" && $author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)):?>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/certificate1?id=<?=$employee->id?>'">certificate</button>
       <?php endif; ?>
       <?php if($employeetraining->title == 'T2' && $employeetraining->result == "fail"):?>
@@ -59,15 +59,15 @@
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_eng'">T2(ENG)</button>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_spn'">T2(SPN)</button>
       <?php endif; ?>
-      <?php if($employeetraining->title == 'T2' && $employeetraining->result == "pass"):?>
+      <?php if($employeetraining->title == 'T2' && $employeetraining->result == "pass" && $author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)):?>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/certificate2?id=<?=$employee->id?>'">certificate</button>
       <?php endif; ?>
       <?php if($employeetraining->title == 'T3' && $employeetraining->result == "fail"):?>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">T3(KOR)</button>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">T3(ENG)</button>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">T3(SPN)</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">Sexual Harassment Training(KOR)</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">Sexual Harassment Training(ENG)</button>
+        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">Sexual Harassment Training(SPN)</button>
       <?php endif; ?>
-      <?php if($employeetraining->title == 'T3' && $employeetraining->result == "pass"):?>
+      <?php if($employeetraining->title == 'T3' && $employeetraining->result == "pass" && $author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)):?>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/certificate3?id=<?=$employee->id?>'">certificate</button>
       <?php endif; ?>
     </div>
@@ -95,9 +95,9 @@
             <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_spn'">T2(SPN)</button>
         <?php endif; ?>
         <?php if($employeetraining->title == 'T3'):?>
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">T3(KOR)</button>
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">T3(ENG)</button>
-            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">T3(SPN)</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">Sexual Harassment Training(KOR)</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">Sexual Harassment Training(ENG)</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">Sexual Harassment Training(SPN)</button>
         <?php endif; ?>
       </div>
       <?php endif;?>

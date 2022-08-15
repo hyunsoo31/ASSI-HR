@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="/css/cert.css">
 <script>
 //직접 접근 막기
 // if(!document.referrer.includes("test1")){
@@ -14,7 +14,8 @@
   <!--캡처 영영-->
   <br><br><br>
   <div id="capture">
-    <h3>이미지 캡처 영역</h1>
+    <br>
+    <br>
 <br>
 <!-- login EEID:
 <?php echo $_SESSION['useremail']; ?>
@@ -29,7 +30,7 @@
  <?php endforeach?> -->
  <br>
  <br>
-------------------------------------------------------
+<!-- ------------------------------------------------------
 <h4>Training info</h4>
 
  <?php foreach ($trainings as $training): ?>
@@ -40,19 +41,28 @@
     <?php endif;?>
  <?php endforeach?>
  <br>
- <br>
-------------------------------------------------------
-<h4>user training info</h4>
+ <br> -->
+<!-- ------------------------------------------------------
+<h4>user training info</h4> -->
 
 <form action="" method="post" id="edit_form" class="content_box">
  <?php foreach ($employeeTrainings as $employeetraining): ?>
     <?php if( $employeetraining->EE_ID == $employee->EEID && $employeetraining->title == "T1" ):?>
-        <div>EEID : <?=$employee->EEID?></div>
-        <div>First Name : <?=$employee->firstName?></div>
-        <div>title: <?=$employeetraining->title?></div>
-        <div>result : <?=$employeetraining->result?></div>
-        <div>result_date: <?=$employeetraining->result_date?></div>
-        <div>deadline_date: <?=$employeetraining->deadline_date?></div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <div>First Name : <span style="font-size: 20px;"><?=$employee->firstName?><span></div>
+        <div>Last Name : <span style="font-size: 20px;"><?=$employee->lastName?><span></div>
+      <br>
+      <br>
+      
+        <div style="font-size: 20px; font-weight: 600;"><?=$employeetraining->title?></div>
+      <br>
+        <div>result date: <?=$employeetraining->result_date?></div>
+     
 
         <input type="hidden" name="employeeTraining[id]" value="<?=$employeetraining->id?>">
         <!-- <input type="text" name="employeeTraining[result]" value="<?=$employeetraining->result ?? 'fail' ?>"> -->

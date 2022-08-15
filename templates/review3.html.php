@@ -12,7 +12,7 @@
   <?php
   if(strpos($_SERVER['REQUEST_URI'], "eng")){
     //$dir = __DIR__;
-    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/ENG/T3';
+    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/ENG/Sexual Harassment Training';
     //echo $dir;
     $handle = opendir($dir);
     $files = array();
@@ -26,7 +26,7 @@
       }
     }
   }elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
-    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/SPN/T3';
+    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/SPN/Sexual Harassment Training';
     $handle = opendir($dir);
     $files = array();
 
@@ -39,7 +39,7 @@
       }
     }
   } else{
-    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/KOR/T3';
+    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/KOR/Sexual Harassment Training';
     $handle = opendir($dir);
     $files = array();
 
@@ -64,17 +64,17 @@
       <div class="slides">
         <?php if(strpos($_SERVER['REQUEST_URI'], "eng")): ?>
         <?php foreach ($files as $key => $value): ?>
-                <div id="slide-<?=$key?>"><img src="/uploads/ENG/T3/<?=$files[$key]?>" alt=""></div>
+                <div id="slide-<?=$key?>"><img src="/uploads/ENG/Sexual Harassment Training/<?=$files[$key]?>" alt=""></div>
         <?php endforeach;?>
         <?php endif;?>
         <?php if(strpos($_SERVER['REQUEST_URI'], "spn")): ?>
         <?php foreach ($files as $key => $value): ?>
-                <div id="slide-<?=$key?>"><img src="/uploads/SPN/T3/<?=$files[$key]?>" alt=""></div>
+                <div id="slide-<?=$key?>"><img src="/uploads/SPN/Sexual Harassment Training/<?=$files[$key]?>" alt=""></div>
         <?php endforeach;?>
         <?php endif;?>
         <?php if(strpos($_SERVER['REQUEST_URI'], "kor")): ?>
         <?php foreach ($files as $key => $value): ?>
-                <div id="slide-<?=$key?>"><img src="/uploads/KOR/T3/<?=$files[$key]?>" alt=""></div>
+                <div id="slide-<?=$key?>"><img src="/uploads/KOR/Sexual Harassment Training/<?=$files[$key]?>" alt=""></div>
         <?php endforeach;?>
         <?php endif;?>
       </div>

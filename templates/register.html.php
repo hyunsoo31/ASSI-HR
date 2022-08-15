@@ -68,8 +68,8 @@ $(document).ready(function(){
                 <input name="author[position]" id="position" type="text" value = "<?=$author['position'] ?? ''?>">
                 <label for="hireDate">hireDate</label>
                 <input name="author[hireDate]" id="hireDate" type="date" value = "<?=$author['hireDate'] ?? ''?>">
-                <label for="permission">permission</label>
-                <input name="author[permission]" id="permission" type="text" value = "<?=$author['permission'] ?? ''?>">
+                <!-- <label for="permission">permission</label>
+                <input name="author[permission]" id="permission" type="text" value = "<?=$author['permission'] ?? ''?>"> -->
                 <label for="store">store</label>
                 <input name="author[store]" id="store" type="text" value = "<?=$author['store'] ?? ''?>">
                 <div class="submit_button">

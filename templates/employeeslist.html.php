@@ -62,7 +62,7 @@
     <div class="user_list">
     <table>
       <thead>
-        <th>EEID</th>
+        <th>employeeID</th>
         <th>firstName</th>
         <th>lastName</th>
         <th>gender</th>
@@ -72,18 +72,20 @@
         <th>hire Date</th>
         <th>rehire Date</th>
         <!-- <th>Termination Date</th> -->
-        <th>Store</th>
-        <th>Permissions</th>
-        <th>Edit</th>
+        <th>store</th>
+        <th>permissions</th>
+        <th>edit</th>
         <th>info</th>
-        <!-- <th>Delete</th> -->
+        <?php if ($author->hasPermission(\Assi\Entity\Employee::DELETE_USER)) :?>
+         <th>Delete</th>
+        <?php endif;?>
       </thead>
 
       <tbody>
         <?php foreach ($employees as $employee): ?>
           <tr style="text-align:center;">
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->EEID;?></td>
-            <td><?=$employee->firstName;?></td>
+            <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->firstName;?></td>
             <td><?=$employee->lastName;?></td>
             <td><?=$employee->gender;?></td>
             <td><?=$employee->DOLStatus;?></td>
@@ -121,21 +123,16 @@
                     <?php endif;?>
                    <?php endforeach;?>
                   </td>
-
-                  <!-- <td>
-                    <?php if ($author): ?>
-                    <?php if ($author->hasPermission(\Assi\Entity\Employee::DELETE_USER)) :?>
-
+                  <?php if ($author): ?>
+                  <?php if ($author->hasPermission(\Assi\Entity\Employee::DELETE_USER)) :?>
+                    <td>
                       <form action="/employee/delete" method="post">
                         <input type="hidden" name="id" value="<?=$employee->id?>">
                         <input type="submit" value="&#xf1f8;" style="font-family: FontAwesome;">
                       </form>
-
-                    <?php endif;?>
-
-                  <?php endif;?>
-
-                  </td> -->
+                    </td> 
+               <?php endif;?>
+              <?php endif;?>
           </tr>
           <?php endforeach; ?>
       </tbody>

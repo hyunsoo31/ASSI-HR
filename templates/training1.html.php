@@ -52,7 +52,8 @@
   }
 
   ?>
-
+ <?php 
+ ?>
   <body>
   <figure>
     <div class="wrap">
@@ -61,21 +62,23 @@
 
         <?php if(strpos($_SERVER['REQUEST_URI'], "eng")): ?>
         <?php foreach ($files as $key => $value): ?>
-                <div class="img on training-img" id="slide-<?=$files[$key]?>"><img src="/uploads/ENG/T1/<?=$files[$key]?>" alt=""></div>
+                <div class="img on training-img" id="slide-<?=$key?>"><img src="/uploads/ENG/T1/<?=$files[$key]?>" alt=""></div>
         <?php endforeach;?>
         <?php endif;?>
         <?php if(strpos($_SERVER['REQUEST_URI'], "spn")): ?>
         <?php foreach ($files as $key => $value): ?>
-                <div class="img on training-img" id="slide-<?=$files[$key]?>"><img src="/uploads/SPN/T1/<?=$files[$key]?>" alt=""></div>
+                <div class="img on training-img" id="slide-<?=$key?>"><img src="/uploads/SPN/T1/<?=$files[$key]?>" alt=""></div>
         <?php endforeach;?>
         <?php endif;?>
         <?php if(strpos($_SERVER['REQUEST_URI'], "kor")): ?>
         <?php foreach ($files as $key => $value): ?>
-                <div class="img on training-img" id="slide-<?=$files[$key]?>"><img src="/uploads/KOR/T1/<?=$files[$key]?>" alt=""></div>
+                <div class="img on training-img" id="slide-<?=$key?>"><img src="/uploads/KOR/T1/<?=$files[$key]?>" alt=""></div>
         <?php endforeach;?>
         <?php endif;?>
 
+
       </div>
+     
     </div>
         <div class="btnNext">
             <button id="btnNextText" class="custom-btn btn-16">NEXT</button>

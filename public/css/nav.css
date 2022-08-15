@@ -42,11 +42,11 @@ nav.active .nav-link{
 }
 
 nav.active .img-logo {
-  /* content: url(/images/assi_logo.png); */
+  content: url(/images/assi_logo_white.png);
 }
 
 nav.active .nav-item{
-  background: white;
+  /* background: white; */
 }
 
 #bar{

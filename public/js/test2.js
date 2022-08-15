@@ -47,7 +47,7 @@ function result(){
 
   var per = parseInt((quiz.score*100)/quiz.questions.length);
 
-  var txt = '<h2>결과</h2>' + '<h2 id="score">당신의 점수: ' + quiz.score + '/' + quiz.questions.length + '<br><br>'+per+'점</h2>';
+  var txt = '<h2>결과</h2>' + quiz.score + '/' + quiz.questions.length + '<h2 id="score">당신의 점수: ' +  '<br><br>'+per+'%</h2>';
 
   quiz_div.innerHTML = txt;
 

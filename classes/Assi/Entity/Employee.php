@@ -5,8 +5,8 @@ class Employee {
   const LIST_USER = 1;
   const LIST_TR = 2;
   const EDIT_USER = 4;
-  const DELETE_USER = 8;
-  const USER_CREATE = 16;
+  const USER_CREATE = 8;
+  const DELETE_USER = 16;
   const EDIT_USER_ACCESS = 32;
 
 

@@ -10,7 +10,7 @@
     margin: 50px auto;
     background-color: #fff;
     padding: 10px 50px 30px 50px;
-    border: 2px solid #EED0DC;
+    border: 2px solid #e1e1e1;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #cbcbcb;
   }
@@ -28,7 +28,7 @@
   /* 문제 영역 */
   .grid #question{
     font-size: 24px;
-    background-color: #C34C74; color: #fff;
+    background-color: #000000; color: #fff;
     font-size: 1.2em;
     padding: 10px 2em;
     border-radius: 15px;
@@ -47,9 +47,11 @@
     padding: 30px 20px;
     border: 2px solid #EED0DC;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
   }
   .btn_test{
-    background-color: #EED0DC;
+    background-color: #ffffff;
     color: #333;
     width: 250px;
     font-size: 16px;

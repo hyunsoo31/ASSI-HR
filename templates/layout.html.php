@@ -58,7 +58,7 @@
             </button> -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <li class="nav-item" style="display:flex; margin-left: 150px;">
-                    <a class="navbar-brand page-scroll img-logo" href="/"><img style="position: relative; border-radius:15px;" src="/images/assi_logo2.png" width="200" height="50" alt="iLand" /></a>
+                    <a class="navbar-brand page-scroll img-logo" href="/"><img style="position: relative; border-radius:15px;" src="/images/assi_logo_grey.png" alt="iLand" /></a>
                   </li>
               <div id="m_nav"><i class="fas fa-bars fa-3x" id="bar"></i></div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar__menu">

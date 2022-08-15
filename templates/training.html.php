@@ -39,17 +39,23 @@
 <br>
 <br>
 KOR:
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_kor'">T1</button>
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_kor'">T2</button>
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">T3</button>
-&nbsp &nbsp &nbsp
+  <div>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_kor'">T1</button>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_kor'">T2</button>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">Sexual Harassment Training</button>
+  </div>
+<br>
 ENG:
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_eng'">T1</button>
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_eng'">T2</button>
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">T3</button>
-&nbsp &nbsp &nbsp
+<div>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_eng'">T1</button>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_eng'">T2</button>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">Sexual Harassment Training</button>
+ </div>
+<br>
 SPN:
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_spn'">T1</button>
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_spn'">T2</button>
-<button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">T3</button>
+  <div>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training1_spn'">T1</button>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training2_spn'">T2</button>
+  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">Sexual Harassment Training</button>
+  </div>
 </div>

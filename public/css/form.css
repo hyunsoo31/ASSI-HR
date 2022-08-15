@@ -163,20 +163,7 @@ th{
   margin: 30px auto;
 }
 
-#capture{
-  background:white;
-  width:900px;
-  height:700px;
-  border: 2px solid green;
-  margin: 30px auto;
-  padding: 30px;
-  text-align: center;
-}
 
-.certification_box{
-  flex-direction:column;
-  padding: 10px;
-}
 
 .new_employee_btn {
   float: left;
