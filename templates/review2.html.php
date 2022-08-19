@@ -74,6 +74,7 @@
   </div>
   <?php endif;?>
   <div class="slider">
+  <?php sort($files);?>
   <?php if(strpos($_SERVER['REQUEST_URI'], "eng")): ?>
         <?php foreach ($files as $key => $value): ?>
                 <div id="slide-<?=$key?>"><img src="/uploads/ENG/T2/<?=$files[$key]?>" alt=""></div>
