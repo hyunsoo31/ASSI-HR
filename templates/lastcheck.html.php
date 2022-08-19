@@ -62,7 +62,8 @@ if(strpos($_SERVER['REQUEST_URI'], "spn")):?>
 <?php
 if(strpos($_SERVER['REQUEST_URI'], "kor")):?>
 <body>
-  <div id="title-text" class="lg-text">준비?</div>
+  <div id="title-text" class="md-text" style="justify-content:space-around;">준비가 되셨다면 테스트를 시작하겠습니다.</div>
+  <div id="title-text" class="md-text" style="font-size: 20px; justify-content:space-around; padding-top:10px;">다시 내용을 보시길 원하신다면 왼편의 Review 를 클릭하여 다시 내용을 확인하실 수 있습니다.</div>
   <div id="container">
 
     <!-- <div id="title-text" class="md-text">Previous</div> -->
@@ -72,7 +73,27 @@ if(strpos($_SERVER['REQUEST_URI'], "kor")):?>
           <p class="btnText2">BACK!</p>
         </div>
      </div>
-    <div id="body">
+    <div id="body" style="padding: 50px;">
+    <div  style="font-size: 20px; justify-content:space-around; font-weight: 700;">
+    테스트 정보
+    </div>
+    <br>
+    <div  style="font-size: 20px; justify-content:space-around;">
+    * 시간 제한 없음
+    <br>
+    * 10개의 문항
+    <br>
+    * 통과 기준: 80%
+    </div>
+    <br>
+    <br>
+    <div  style="font-size: 20px; justify-content:space-around; font-weight: 700;">
+    테스트 끝내신 후
+    </div>
+    <br>
+    <div style="font-size: 20px; justify-content:space-around;">
+    * OK 버튼을 클릭하여 메인 페이지로 나가실 수 있습니다.
+    </div>
 
     </div>
     <!-- <div id="title-text" class="md-text">Next</div> -->

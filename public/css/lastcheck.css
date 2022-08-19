@@ -84,13 +84,16 @@ body {
     width: 55%;
     height: 40vh;
     /* min-height: 1000px; */
-    background-image: url('../images/lastcheck_page.png');
+    /* background-image: url('../images/lastcheck_kor.png'); */
+    /* background-image: url('https://cdn.pixabay.com/photo/2016/06/20/13/44/paper-1468883_960_720.jpg'); */
+
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
     /* background-color: #fff; */
     overflow: auto;
     display: flex;
+    flex-direction: column;
 
 }
 

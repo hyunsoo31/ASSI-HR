@@ -1,4 +1,16 @@
 #capture{
+    background-image: url(../img/assi_certificate1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:950px;
+    /* height:700px; */
+    border: 2px solid green;
+    margin: 30px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+#capture2{
     background-image: url(../img/assi_certificate2.png);
     background-repeat: no-repeat;
     background-size: cover;

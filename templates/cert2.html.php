@@ -7,13 +7,13 @@
 
 </script>
 <div class="certification_box" style="">
-  <input type="hidden" name="capture_image" value="">
-  <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;">
-  <!-- <input type="button" onclick="capture_save_server('capture')" value="서버에 이미지 저장"> -->
+  <input type="hidden" name="capture2_image" value="">
+  <input type="button" onclick="capture2_html('capture2')" value="save certificate" style="text-align: cetner;">
+  <!-- <input type="button" onclick="capture2_save_server('capture2')" value="서버에 이미지 저장"> -->
 
   <!--캡처 영영-->
   <br><br><br>
-  <div id="capture">
+  <div id="capture2">
     <br>
     <br>
 <br>
@@ -68,7 +68,7 @@
         <?php endif;?>
       <?php endforeach?>
       <br>
-        <div>result date: <?=$employeetraining->result_date?></div>
+        <div>Result Date: <?=date("m/d/Y", strtotime($employeetraining->result_date))?></div>
      
 
         <input type="hidden" name="employeeTraining[id]" value="<?=$employeetraining->id?>">
@@ -89,20 +89,20 @@
     <?php endif;?>
  <?php endforeach?>
  <!-- <input type="submit" name="submit" value="save"> -->
- <!-- <input type="hidden" name="capture_image" value="">
- <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;"> -->
+ <!-- <input type="hidden" name="capture2_image" value="">
+ <input type="button" onclick="capture2_html('capture2')" value="save certificate" style="text-align: cetner;"> -->
 </form>
 
 </div>
   </div>
 <script>
-function capture_html(id){
+function capture2_html(id){
   html2canvas(document.querySelector("#"+id)).then(canvas => {
-    capture_save(canvas.toDataURL('img/png'), "<?=$employee->firstName?>_certificate_T2.png");
+    capture2_save(canvas.toDataURL('img/png'), "<?=$employee->firstName?>_certificate_T2.png");
   });
 }
 
-function capture_save(uri, filename) {
+function capture2_save(uri, filename) {
   var link = document.createElement('a');
   if(typeof link.download === 'string'){
     link.href = uri;
@@ -114,18 +114,18 @@ function capture_save(uri, filename) {
     window.open(uri);
   }
 }
-// function capture_save_server(id){
+// function capture2_save_server(id){
 //   var form=document.form;
-//   var capture_image="";
+//   var capture2_image="";
 //   html2canvas(document.querySelector("#"+id)).then(canvas => {
-//     capture_image=canvas.toDataURL('image/png');
+//     capture2_image=canvas.toDataURL('image/png');
 //   });
 //   setTimeout(function(){
 //     $.ajax({
 //       type: 'post',
 //       async: false,
 //       url: '../test/form.php',
-//       data: {'t': 'capture_save_server', 'capture_image':capture_image},
+//       data: {'t': 'capture2_save_server', 'capture2_image':capture2_image},
 //       success.function(data){
 //         $("#server_img").html(data);
 //       }

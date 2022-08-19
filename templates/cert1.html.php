@@ -68,7 +68,7 @@
         <?php endif;?>
       <?php endforeach?>
       <br>
-        <div>result date: <?=$employeetraining->result_date?></div>
+        <div>Result Date: <?=date("m/d/Y", strtotime($employeetraining->result_date))?></div>
      
 
         <input type="hidden" name="employeeTraining[id]" value="<?=$employeetraining->id?>">

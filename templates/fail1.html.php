@@ -20,7 +20,7 @@ login EEID:
 <?php echo"Training Info";?>
 ---------------------------
  <?php foreach ($trainings as $training): ?>
-    <?php if($training->id == 2 ):?>
+    <?php if($training->id == 1 ):?>
         <div>id : <?=$training->id?></div>
         <div>title: <?=$training->title?></div>
         <div>date: <?=$training->dateOfUpdated?></div>

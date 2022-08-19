@@ -65,6 +65,7 @@
 
       </div> <!--end quiz-->
     </div> <!-- end grid-->
+    <script defer src="../js/test3_eng.js"></script>
     <?php endif;?>
   </body>
 

@@ -62,23 +62,37 @@
                   </li>
               <div id="m_nav"><i class="fas fa-bars fa-3x" id="bar"></i></div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar__menu">
-                  <!-- <li class="nav-item" style="display:flex; margin-right: 30px;">
-                    <a class="navbar-brand page-scroll img-logo" href="/"><img style="position: relative; border-radius:15px;" src="/images/assi_logo2.png" width="200" height="50" alt="iLand" /></a>
-                  </li> -->
+
                   <li>
-                   <a class="nav-link" aria-current="page" href="/">HOME</a>
+                   <a class="nav-link main_nav" aria-current="page" href="/">HOME</a>
                   </li>   
                   <li>
-                  <a class="nav-link" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MA PAGE</a>
+                  <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MA PAGE</a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="nav-link main_nav" aria-current="page" href="/orientation_kor">ORIENTATION</a>
+                    <ul id="sub-menu">
+                      <li><a class="nav-link" aria-current="page" href="/orientation_kor">ORIENTATION(KOR)</a></li>
+                      <li><a class="nav-link" aria-current="page" href="/orientation_eng">ORIENTATION(ENG)</a></li>
+                      <li><a class="nav-link" aria-current="page" href="/orientation_spn">ORIENTATION(SPN)</a></li>
+                    </ul>
+                  </li>
+                  <li  class="dropdown">
+                  <a class="nav-link main_nav" aria-current="page" href="/insurance">INSURANCE</a>
+                  <ul id="sub-menu2">
+                      <li><a class="nav-link" aria-current="page" href="/orientation_kor">INSURANCE(KOR)</a></li>
+                      <li><a class="nav-link" aria-current="page" href="/orientation_eng">INSURANCE(ENG)</a></li>
+                      <li><a class="nav-link" aria-current="page" href="/orientation_spn">INSURANCE(SPN)</a></li>
+                    </ul>
                   </li>
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_TR)) : ?>
                   <li>
-                  <a class="nav-link" aria-current="page" href="/training/list">TRAINING</a>
+                  <a class="nav-link main_nav" aria-current="page" href="/training/list">TRAINING</a>
                   </li>
                   <?php endif;?>
                   <li>
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_USER)): ?>
-                  <a class="nav-link" aria-current="page" href="/employees/list">EMPLOYEES</a>
+                  <a class="nav-link main_nav" aria-current="page" href="/employees/list">EMPLOYEES</a>
                   <?php endif;?>
                   </li>
                 <!-- <li class="nav-item">
@@ -201,17 +215,23 @@
 <script>
 var current_location = window.location.href;
 var current_location_temp = current_location.slice(21);
-var list_all = document.getElementsByClassName('nav-link');
+var list_all = document.getElementsByClassName('main_nav');
 
 
 if(current_location.match('employee') && !current_location.match('detail')) {
-  list_all[3].className += " active";
+  list_all[5].className += " active";
 }
 else if (current_location.match('employee/detail')) {
   list_all[1].className += " active";
 }
 else if (current_location.match('training')) {
+  list_all[4].className += " active";
+}
+else if (current_location.match('orientation')) {
   list_all[2].className += " active";
+}
+else if (current_location.match('insurance')) {
+  list_all[3].className += " active";
 }
 else{
   list_all[0].className += " active";

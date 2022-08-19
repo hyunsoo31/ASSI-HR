@@ -404,6 +404,7 @@ class Training
         return ['template' => 'test1.html.php', 'title' => $title];
       }
     }
+    
     public function test2() {
       $title = 'TEST2';
       return ['template' => 'test2.html.php', 'title' => $title];

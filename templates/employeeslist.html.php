@@ -153,7 +153,7 @@
     </table>
     <div>
     <div class="page_box">
-     page:
+     <!-- page: -->
 
      <?php
 

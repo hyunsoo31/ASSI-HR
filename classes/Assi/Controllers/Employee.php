@@ -143,6 +143,28 @@ class Employee {
     return ['template' => 'pdf.html.php', 'title' => $title,'author' => $author];
   }
 
+
+  public function orientation() {
+    if(strpos($_SERVER['REQUEST_URI'], "eng")){
+      $title = 'Orientation(eng)';
+      return ['template' => 'orientation.html.php', 'title' => $title];
+    }
+    elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
+      $title = 'Orientation(spn)';
+      return ['template' => 'orientation.html.php', 'title' => $title];
+    }
+    else{
+      $title = 'Orientation(kor)';
+      return ['template' => 'orientation.html.php', 'title' => $title];
+    }
+  }
+  public function insurance() {
+
+
+    $title = 'Insurance';
+    return ['template' => 'insurance.html.php', 'title' => $title];
+  }
+
   // public function delete() {
   //   $author = $this-> authentication->getUser();
   //   $employee = $this->employeesTable->findById($_POST['id']);
