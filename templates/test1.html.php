@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="grid">
-      <h1>퀴즈</h1>
+      <!-- <h1>퀴즈</h1> -->
       <div id="quiz">
         <p id="question"></p>
         <div class="buttons">

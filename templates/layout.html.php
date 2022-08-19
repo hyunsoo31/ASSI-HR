@@ -66,19 +66,19 @@
                     <a class="navbar-brand page-scroll img-logo" href="/"><img style="position: relative; border-radius:15px;" src="/images/assi_logo2.png" width="200" height="50" alt="iLand" /></a>
                   </li> -->
                   <li>
-                   <a class="nav-link" aria-current="page" href="/">Home</a>
+                   <a class="nav-link" aria-current="page" href="/">HOME</a>
                   </li>   
                   <li>
-                  <a class="nav-link" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">my page</a>
+                  <a class="nav-link" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MA PAGE</a>
                   </li>
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_TR)) : ?>
                   <li>
-                  <a class="nav-link" aria-current="page" href="/training/list">Training</a>
+                  <a class="nav-link" aria-current="page" href="/training/list">TRAINING</a>
                   </li>
                   <?php endif;?>
                   <li>
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_USER)): ?>
-                  <a class="nav-link" aria-current="page" href="/employees/list">employees</a>
+                  <a class="nav-link" aria-current="page" href="/employees/list">EMPLOYEES</a>
                   <?php endif;?>
                   </li>
                 <!-- <li class="nav-item">
@@ -180,14 +180,14 @@
     <div class="row">
       <div class="col align-self-start footer_third_line">
         <ul>
-          <li>email : admin@assiplaza.net</li>
+          <li>EMAIL : admin@assiplaza.net</li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col align-self-start footer_fourth_line">
         <ul>
-          <li>Assi market</li>
+          <li>ASSI PLAZA</li>
           <li>ALL RIGHTS RESERVED</li>
         </ul>
       </div>
@@ -198,23 +198,35 @@
 
 </body>
 
-  <script>
-  var current_location = window.location.href;
-  var current_location_temp = current_location.slice(21);
-  // console.log("현재주소:", current_location);
-  // console.log(current_location_temp);
-  var list_all = document.getElementsByClassName('nav-link');
+<script>
+var current_location = window.location.href;
+var current_location_temp = current_location.slice(21);
+var list_all = document.getElementsByClassName('nav-link');
 
-  console.log(current_location_temp)
-  for (i=0; i<list_all.length; i++){
-    if (list_all[i].href.indexOf(current_location_temp) == 0) {
-      list_all[0].className += " active";
-    }
-    else if (list_all[i].href.indexOf(current_location_temp) != -1){
-      list_all[i].className += " active";
-    }
-    
-  }
+
+if(current_location.match('employee') && !current_location.match('detail')) {
+  list_all[3].className += " active";
+}
+else if (current_location.match('employee/detail')) {
+  list_all[1].className += " active";
+}
+else if (current_location.match('training')) {
+  list_all[2].className += " active";
+}
+else{
+  list_all[0].className += " active";
+}
+
+
+// for (i=0; i<list_all.length; i++){
+//   if (list_all[i].href.indexOf(current_location_temp) == 0) {
+//     list_all[0].className += " active";
+//   }
+//   else if (list_all[i].href.indexOf(current_location_temp) != -1){
+//     list_all[i].className += " active";
+//   }
+  
+// }
 
 
 
@@ -254,7 +266,7 @@
   // }
 
 
-  </script>
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="/js/main.js"></script>

@@ -391,39 +391,62 @@ class Training
     // }
 
     public function test1() {
-      $title = 'TEST1';
-      return ['template' => 'test1.html.php', 'title' => $title];
+      if(strpos($_SERVER['REQUEST_URI'], "eng")){
+        $title = 'TEST(eng)';
+        return ['template' => 'test1.html.php', 'title' => $title];
+      }
+      elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
+        $title = 'TEST(spn)';
+        return ['template' => 'test1.html.php', 'title' => $title];
+      }
+      else{
+        $title = 'TEST(kor)';
+        return ['template' => 'test1.html.php', 'title' => $title];
+      }
     }
     public function test2() {
       $title = 'TEST2';
       return ['template' => 'test2.html.php', 'title' => $title];
     }
+
     public function test3() {
-      $title = 'TEST3';
-      return ['template' => 'test3.html.php', 'title' => $title];
+      if(strpos($_SERVER['REQUEST_URI'], "eng")){
+        $title = 'TEST3(eng)';
+        return ['template' => 'test3.html.php', 'title' => $title];
+      }
+      elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
+        $title = 'TEST3(spn)';
+        return ['template' => 'test3.html.php', 'title' => $title];
+      }
+      else{
+        $title = 'TEST3(kor)';
+        return ['template' => 'test3.html.php', 'title' => $title];
+      }
     }
-    public function test1_eng() {
-      $title = 'TEST1';
-      return ['template' => 'test1(eng).html.php', 'title' => $title];
-    }
-    public function test2_eng() {
-      $title = 'TEST2';
-      return ['template' => 'test2(eng).html.php', 'title' => $title];
-    }
-    public function test3_eng() {
-      $title = 'TEST3';
-      return ['template' => 'test3(eng).html.php', 'title' => $title];
-    }
-    public function test1_spn() {
-      $title = 'TEST1';
-      return ['template' => 'test1(spn).html.php', 'title' => $title];
-    }
-    public function test2_spn() {
-      $title = 'TEST2';
-      return ['template' => 'test2(spn).html.php', 'title' => $title];
-    }
-    public function test3_spn() {
-      $title = 'TEST3';
-      return ['template' => 'test3(spn).html.php', 'title' => $title];
-    }
+
+
+    // public function test1_eng() {
+    //   $title = 'TEST1';
+    //   return ['template' => 'test1(eng).html.php', 'title' => $title];
+    // }
+    // public function test2_eng() {
+    //   $title = 'TEST2';
+    //   return ['template' => 'test2(eng).html.php', 'title' => $title];
+    // }
+    // public function test3_eng() {
+    //   $title = 'TEST3';
+    //   return ['template' => 'test3(eng).html.php', 'title' => $title];
+    // }
+    // public function test1_spn() {
+    //   $title = 'TEST1';
+    //   return ['template' => 'test1(spn).html.php', 'title' => $title];
+    // }
+    // public function test2_spn() {
+    //   $title = 'TEST2';
+    //   return ['template' => 'test2(spn).html.php', 'title' => $title];
+    // }
+    // public function test3_spn() {
+    //   $title = 'TEST3';
+    //   return ['template' => 'test3(spn).html.php', 'title' => $title];
+    // }
 }

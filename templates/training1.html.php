@@ -59,7 +59,7 @@
     <div class="wrap">
       <div class="slider">
         <div class="slides">
-
+        <?php sort($files);?>
         <?php if(strpos($_SERVER['REQUEST_URI'], "eng")): ?>
         <?php foreach ($files as $key => $value): ?>
                 <div class="img on training-img" id="slide-<?=$key?>"><img src="/uploads/ENG/T1/<?=$files[$key]?>" alt=""></div>

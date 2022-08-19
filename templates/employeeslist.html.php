@@ -23,28 +23,34 @@
 
 
     <div class="user_list_box">
-    <h2>Employees list</h2>
+    <h2>EMPLOYEES LIST</h2>
     <div class="storelist">
       <h3>STORE</h3>
-    <ul class="store">
-        <li class="store_nav"><a href="/employees/list?page=1">ALL</a><li>
-        <li class="store_nav"><a href="/employees/list?page=1&store=GA55">GA55</a><li>
-        <li class="store_nav"><a href="/employees/list?page=1&store=IL70">IL70</a><li>
-        <li class="store_nav"><a href="/employees/list?page=1&store=PA88">PA88</a><li>
+        <ul class="store">
+            <li class="store_nav"><a href="/employees/list?page=1">ALL</a><li>
+            <li class="store_nav"><a href="/employees/list?page=1&store=GA55">GA55</a><li>
+            <li class="store_nav"><a href="/employees/list?page=1&store=IL70">IL70</a><li>
+            <li class="store_nav"><a href="/employees/list?page=1&store=PA88">PA88</a><li>
 
-    </ul>
+        </ul>
+        <h3>DOL STATUS</h3>
+        <ul class="dol">
+            <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Full-Time">FULL-TIME</a><li>
+            <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Part-Time">PART-TIME</a><li>
+        </ul>
     </div>
+    
     <?php if($author->hasPermission(\Assi\Entity\Employee::USER_CREATE)): ?>
-    <button type="button" class="btn btn-outline-secondary new_employee_btn" onclick="location.href='/employee/register'">New employee</button>
+    <button type="button" class="btn btn-outline-secondary new_employee_btn" onclick="location.href='/employee/register'">NEW EMPLOYEE</button>
     <?php endif;?>
     <form action="">
       <div style="display: flex; height: 80px; justify-content: center; align-items: center;">
         <div class="select-box">
         <select id="changeTest" onchange="selectBoxChange(this.value);">
-          <option value="fistName">firstName</option>
-          <option value="lastName">lastName</option>
-          <option value="DEPT">department</option>
-          <option value="position">position</option>
+          <option value="fistName">FIRSTNAME</option>
+          <option value="lastName">LASTNAME</option>
+          <option value="DEPT">DEPARTMENT</option>
+          <option value="position">POSITION</option>
         </select>
         </div>
 
@@ -62,22 +68,24 @@
     <div class="user_list">
     <table>
       <thead>
-        <th>employeeID</th>
-        <th>firstName</th>
-        <th>lastName</th>
-        <th>gender</th>
-        <th>DOLStatus</th>
+        <th>EEID</th>
+        <th>FIRST NAME</th>
+        <th>MIDDLE NAME</th>
+        <th>LAST NAME</th>
+        <th>GENDER</th>
+        <th>DOL STATUS</th>
         <th>DEPT</th>
-        <th>position</th>
-        <th>hire Date</th>
-        <th>rehire Date</th>
+        <th>POSITION</th>
+        <th>PAY TYPE</th>
+        <th>HIRE DATE</th>
+        <th>REHIRE DATE</th>
         <!-- <th>Termination Date</th> -->
-        <th>store</th>
-        <th>permissions</th>
-        <th>edit</th>
-        <th>info</th>
+        <th>STORE</th>
+        <th>EDIT</th>
+        <th>INFO</th>
         <?php if ($author->hasPermission(\Assi\Entity\Employee::DELETE_USER)) :?>
-         <th>Delete</th>
+         <th>PERMISSION</th>
+         <th>DELETE</th>
         <?php endif;?>
       </thead>
 
@@ -87,19 +95,17 @@
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->EEID;?></td>
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->firstName;?></td>
             <td><?=$employee->lastName;?></td>
+            <td><?=$employee->lastName;?></td>
             <td><?=$employee->gender;?></td>
             <td><?=$employee->DOLStatus;?></td>
             <td><?=$employee->department;?></td>
             <td><?=$employee->position;?></td>
+            <td><?=$employee->payType;?></td>
             <td><?=$employee->hireDate;?></td>
             <td><?=$employee->rehireDate;?></td>
             <!-- <td><?=$employee->terminationDate;?></td> -->
             <td><?=$employee->store;?></td>
-            <td><?=$employee->permission;?> 
-            <?php if ($author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)) :?>
-            <a href="/employee/permissions?id=<?=$employee->id;?>"><i class="fa-solid fa-pen-to-square"></i></a>
-            <?php endif; ?>
-            </td>
+
             <td>
 
                     <?php if ($author): ?>
@@ -123,6 +129,14 @@
                     <?php endif;?>
                    <?php endforeach;?>
                   </td>
+                  <?php if ($author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)) :?>
+                    <td><?=$employee->permission;?> 
+                    <?php endif;?>
+                    <?php if ($author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)) :?>
+                    <a href="/employee/permissions?id=<?=$employee->id;?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                    </td>
+                    <?php endif; ?>
+                   
                   <?php if ($author): ?>
                   <?php if ($author->hasPermission(\Assi\Entity\Employee::DELETE_USER)) :?>
                     <td>
@@ -176,9 +190,10 @@
    //console.log("현재주소:", current_location);
    //console.log(current_location_temp);
   var list_all = document.getElementsByClassName('store_nav');
+  var list_all2 = document.getElementsByClassName('DOL_nav');
 
   for (i=0; i<list_all.length; i++) {
-    // console.log(list_all[i].href);
+  
     if (current_location.indexOf("GA55") != -1) {
       list_all[1].className += " active";
       list_all[0].classList.remove("active");
@@ -205,6 +220,22 @@
     }
   }
 
+  for (i=0; i<list_all2.length; i++) {
+  
+  if (current_location.indexOf("Full-Time") != -1) {
+    list_all2[0].className += " active";
+    list_all2[1].classList.remove("active");
+  }
+  else if (current_location.indexOf("Part-Time") != -1) {
+    list_all2[1].className += " active";
+    list_all2[0].classList.remove("active");
+  }
+  else{
+
+    list_all2[0].classList.remove("active");
+    list_all2[1].classList.remove("active");
+  }
+}
 
   </script>
 </html>

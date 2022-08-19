@@ -46,6 +46,18 @@ class Employee {
       $numPages = ceil($totalEmployees/5);
       $title = '직원 목록';
     }
+    elseif (isset($_GET['DOLStatus']) and $_GET['DOLStatus']=='Full-Time') {
+      $employees = $this->employeesTable->find('DOLStatus', 'Full-Time', '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total('DOLStatus', 'Full-Time');
+      $numPages = ceil($totalEmployees/5);
+      $title = '직원 목록';
+    }
+    elseif (isset($_GET['DOLStatus']) and $_GET['DOLStatus'] =='Part-Time') {
+      $employees = $this->employeesTable->find('DOLStatus', 'Part-Time', '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total('DOLStatus', 'Part-Time');
+      $numPages = ceil($totalEmployees/5);
+      $title = '직원 목록';
+    }
     elseif (isset($_GET['firstName'])) {
       $employees = $this->employeesTable->find('firstName', $_GET['firstName'], '', 10, $offset);
       $totalEmployees = $this->employeesTable->total('firstName', $_GET['firstName']);

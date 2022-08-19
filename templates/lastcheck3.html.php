@@ -34,7 +34,7 @@
 <?php
 if(strpos($_SERVER['REQUEST_URI'], "spn")):?>
 <body>
-  <div id="title-text" class="lg-text">스페인어</div>
+  <div id="title-text" class="lg-text">Ready?(스페인어)</div>
   <div id="container">
 
     <!-- <div id="title-text" class="md-text">Previous</div> -->
@@ -62,7 +62,7 @@ if(strpos($_SERVER['REQUEST_URI'], "spn")):?>
 <?php
 if(strpos($_SERVER['REQUEST_URI'], "kor")):?>
 <body>
-  <div id="title-text" class="lg-text">준비 됐나요</div>
+  <div id="title-text" class="lg-text">Ready?(KOR)</div>
   <div id="container">
 
     <!-- <div id="title-text" class="md-text">Previous</div> -->

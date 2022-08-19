@@ -6,8 +6,10 @@
 </style>
 <div style="margin: 30px auto;">
 <form action="" method="post">
-  <label for="training[title]">training name: </label>
-  <input type="text" id="training[title]" name="training[title]" value="<?=$training->title ?? ''?>"/>
+  <input type="hidden" id="training[id]" name="training[id]" value="<?=$training->id ?? ''?>"/>
+  <input type="hidden" id="training[title]" name="training[title]" value="<?=$training->title ?? ''?>"/>
+  <label for="training[name]">training name: </label>
+  <input type="text" id="training[name]" name="training[name]" value="<?=$training->name ?? ''?>"/>
   <label for="training[dateOfUpdated]">date of updated: </label>
   <input type="date" id="training[dateOfUpdated]" name="training[dateOfUpdated]" value="<?=$training->dateOfUpdated ?? ''?>"/>
   <input type="submit" name="submit" value="save">

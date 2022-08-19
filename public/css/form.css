@@ -42,7 +42,7 @@ input#email, input#name, input#password {
   flex-direction: column;
   margin: 30px auto;
   width: 600px;
-  height: 600px;
+  /* height: 600px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

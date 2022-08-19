@@ -32,6 +32,7 @@
 
 var quiz = new Quiz(questions);
 
+
 function update_quiz(){
   var question = document.getElementById('question');
   var idx = quiz.questionIndex + 1;
@@ -54,6 +55,7 @@ function update_quiz(){
 }
 
 var btn = document.querySelectorAll('.btn_test')
+
 function progress(){
   var progress = document.getElementById('progress');
   progress.innerHTML = '문제 '+ (quiz.questionIndex+1) + ' /'+ quiz.questions.length;
@@ -98,7 +100,9 @@ function checkAnswer(i){
     }
   });
 }
+
 for(var i=0; i<btn.length; i++){
   checkAnswer(i);
 }
+
 update_quiz();

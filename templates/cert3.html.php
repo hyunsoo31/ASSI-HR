@@ -54,12 +54,19 @@
       <br>
       <br>
       <br>
+      <br>
+      <br>
+      <br>
         <div>First Name : <span style="font-size: 20px;"><?=$employee->firstName?><span></div>
         <div>Last Name : <span style="font-size: 20px;"><?=$employee->lastName?><span></div>
       <br>
       <br>
-      
-        <div style="font-size: 20px; font-weight: 600;">Sexual Harassment Training</div>
+      <br>
+      <?php foreach ($trainings as $training): ?>
+        <?php if($training->id == 3):?>
+        <div style="font-size: 20px; font-weight: 600;"><?=$training->name?></div>
+        <?php endif;?>
+      <?php endforeach?>
       <br>
         <div>result date: <?=$employeetraining->result_date?></div>
      
