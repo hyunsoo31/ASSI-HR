@@ -1,3 +1,5 @@
+<link rel="stylesheet" href = "/css/home.css">
+
 <!-- <header id="header_container">
   <h1 style="text-align: center; margin-bottom: 100px;">ASSI PLAZA</h1>
 </header>
@@ -7,29 +9,39 @@
 
 </div> -->
 
+<!-- 고정 사진 홈 -->
 
-<!-- <header id="header_container">
-  <h2 style="text-align: center; margin-bottom: 30px; font-size: 4rem;">HR Training for Assi Employees</h2>
-</header>
-<div class="home_container">
- 
+<!-- <div class="home_box1">
+ <h1>ASSI PLAZA  <br> HR WEBSITE</h1>
 
 </div> -->
 
+<!-- 슬라이드 홈 -->
 
-
-<!-- <header id="header_container">
-  <h2 style="text-align: center; margin-bottom: 30px; font-size: 4rem;">HR Training for Assi Employees</h2>
-</header> -->
-<div id="slide" val="1" mx="3">
-
+<!-- <div id="slide" val="1" mx="5">
       <li id="img1"><img src="https://cdn.pixabay.com/photo/2022/08/15/02/07/park-7386978_960_720.jpg" alt=""></li>
       <li id="img2"><img src="https://cdn.pixabay.com/photo/2021/11/16/15/35/electronics-6801339_960_720.jpg" alt=""></li>
       <li id="img3"><img src="https://cdn.pixabay.com/photo/2022/06/12/22/48/futuristic-7258997_960_720.png" alt=""></li>
+      <li id="img4"><img src="https://cdn.pixabay.com/photo/2022/08/08/19/36/landscape-7373484_960_720.jpg" alt=""></li>
+      <li id="img5"><img src="https://cdn.pixabay.com/photo/2022/08/01/10/36/tulips-7357877_960_720.jpg" alt=""></li>
   
-</div>
-<style>
+</div> -->
 
+<!-- 비디오 홈-->
+
+<div class="home_box2">
+  <h1>ASSI PLAZA</h1>
+    <video muted autoplay loop>
+      <source src="videos/videosample.mp4" type="video/mp4">
+      <strong>Your browser does not support the video tag.</strong>
+    </video>
+</div>
+<!-- 
+<div class="videoplayer">
+	<iframe class="videoplayer-iframe" src="videos/videosample.mp4?autoplay=1&mute=1&loop=1" allow="autoplay"></iframe>
+</div> -->
+
+<style>
 #slide{
 position:relative;
 width: 100%;

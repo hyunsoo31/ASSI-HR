@@ -1,8 +1,8 @@
 <script>
 //직접 접근 막기
-// if(!document.referrer.includes("test2")){
-//   location.href = "/";
-// }
+if(!document.referrer.includes("test2")){
+  location.href = "/";
+}
 </script>
 <div class="content_box">
 login EEID:
@@ -53,10 +53,10 @@ login EEID:
         <br>
     <?php endif;?>
  <?php endforeach?>
- <input type="submit" name="submit" value="save"style="margin-top:30px; float:right;">
+ <!-- <input type="submit" name="submit" value="save"style="margin-top:30px; float:right;"> -->
 </form>
 </div>
 
 <script>
-  // this.document.getElementById("edit_form").submit();
+  this.document.getElementById("edit_form").submit();
 </script>

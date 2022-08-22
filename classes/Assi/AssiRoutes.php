@@ -598,7 +598,103 @@ class AssiRoutes implements \Rheebros\Routes
         ],
          'login' => true
       ],
+      'insurance_ga55_kor' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::GA55
+      ],
+      'insurance_ga55_eng' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::GA55
+      ],
+      'insurance_ga55_spn' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::GA55
+      ],
+      'insurance_il70_kor' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::IL70
+      ],
+      'insurance_il70_eng' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::IL70
+      ],
+      'insurance_il70_spn' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::IL70
+      ],
+      'insurance_pa88_kor' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::PA88
+      ],
+      'insurance_pa88_eng' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::PA88
+      ],
+      'insurance_pa88_spn' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::PA88
+      ],
 
+      'insurance_form_ga55' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance_form'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::GA55
+      ],
+      'insurance_form_il70' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance_form'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::IL70
+      ],
+      'insurance_form_pa88' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'insurance_form'
+        ],
+         'login' => true,
+         'permissions' => \Assi\Entity\Employee::PA88
+      ],
       // 'training/delete' => [
       //   'POST' => [
       //     'controller' => $trainingController,

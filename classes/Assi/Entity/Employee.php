@@ -2,12 +2,15 @@
 namespace Assi\Entity;
 
 class Employee {
-  const LIST_USER = 1;
-  const LIST_TR = 2;
-  const EDIT_USER = 4;
-  const USER_CREATE = 8;
-  const DELETE_USER = 16;
-  const EDIT_USER_ACCESS = 32;
+  const GA55 = 1;
+  const IL70 = 2;
+  const PA88 = 4;
+  const LIST_USER = 8;
+  const LIST_TR = 16;
+  const EDIT_USER = 32;
+  const USER_CREATE = 64;
+  const DELETE_USER = 128;
+  const EDIT_USER_ACCESS = 256;
 
 
   public $id;

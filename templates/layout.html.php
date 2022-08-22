@@ -20,44 +20,13 @@
 
 <body>
 
-  <!-- <div class="wrapper">
-  <div class="container">
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-
-        <div class="navbar-header page-scroll">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand page-scroll" href="#main"><img src="images/logo.png" width="80" height="30" alt="iLand" /></a> </div>
-
-        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a class="page-scroll" href="#main">Home</a></li>
-            <li><a class="page-scroll" href="#classes">Classes</a></li>
-            <li><a class="page-scroll" href="#features">Features</a></li>
-            <li><a class="page-scroll" href="#review">Reviews</a></li>
-            <li><a class="page-scroll" href="#pricing">Pricing</a></li>
-            <li><a class="page-scroll" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  </div> -->
-
   <section id="wrap">
-      <!-- <header id="header_container">
-        <h1>ASSI</h1>
-        <h2>MARKET</h2>
-      </header> -->
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="/">Menu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button> -->
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <li class="nav-item" style="display:flex; margin-left: 150px;">
+                <li class="nav-item" style="display:flex; margin-left: 150px;">
                     <a class="navbar-brand page-scroll img-logo" href="/"><img style="position: relative; border-radius:15px;" src="/images/assi_logo_grey.png" alt="iLand" /></a>
                   </li>
               <div id="m_nav"><i class="fas fa-bars fa-3x" id="bar"></i></div>
@@ -69,22 +38,46 @@
                   <li>
                   <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MA PAGE</a>
                   </li>
-                  <li class="dropdown">
-                    <a class="nav-link main_nav" aria-current="page" href="/orientation_kor">ORIENTATION</a>
-                    <ul id="sub-menu">
-                      <li><a class="nav-link" aria-current="page" href="/orientation_kor">ORIENTATION(KOR)</a></li>
-                      <li><a class="nav-link" aria-current="page" href="/orientation_eng">ORIENTATION(ENG)</a></li>
-                      <li><a class="nav-link" aria-current="page" href="/orientation_spn">ORIENTATION(SPN)</a></li>
-                    </ul>
-                  </li>
-                  <li  class="dropdown">
-                  <a class="nav-link main_nav" aria-current="page" href="/insurance">INSURANCE</a>
-                  <ul id="sub-menu2">
-                      <li><a class="nav-link" aria-current="page" href="/orientation_kor">INSURANCE(KOR)</a></li>
-                      <li><a class="nav-link" aria-current="page" href="/orientation_eng">INSURANCE(ENG)</a></li>
-                      <li><a class="nav-link" aria-current="page" href="/orientation_spn">INSURANCE(SPN)</a></li>
-                    </ul>
-                  </li>
+         
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ORIENTATION
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="/orientation_kor">ORIENTATION(KOR)</a></li>
+                        <li><a class="dropdown-item" href="/orientation_eng">ORIENTATION(ENG)</a></li>
+                        <li><a class="dropdown-item" href="/orientation_spn">ORIENTATION(SPN)</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        INSURANCE
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::GA55)) : ?>
+                    
+                        <li><a class="dropdown-item" href="/insurance_ga55_kor">GA55(KOR)</a></li>
+                        <li><a class="dropdown-item" href="/insurance_ga55_eng">GA55(ENG)</a></li>
+                        <li><a class="dropdown-item" href="/insurance_ga55_spn">GA55(SPN)</a></li>
+                   
+                      <?php endif;?>
+                      <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::IL70)) : ?>
+                     
+                        <li><a class="dropdown-item" href="/insurance_il70_kor">IL70(KOR)</a></li>
+                        <li><a class="dropdown-item" href="/insurance_il70_eng">IL70(ENG)</a></li>
+                        <li><a class="dropdown-item" href="/insurance_il70_spn">IL70(SPN)</a></li>
+                    
+                      <?php endif;?>
+                      <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::PA88)) : ?>
+                 
+                        <li><a class="dropdown-item" href="/insurance_pa88_kor">PA88(KOR)</a></li>
+                        <li><a class="dropdown-item" href="/insurance_pa88_eng">PA88(ENG)</a></li>
+                        <li><a class="dropdown-item" href="/insurance_pa88_spn">PA88(SPN)</a></li>
+              
+                      <?php endif;?>
+                      </ul>
+                    </li>
+
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_TR)) : ?>
                   <li>
                   <a class="nav-link main_nav" aria-current="page" href="/training/list">TRAINING</a>
@@ -95,29 +88,7 @@
                   <a class="nav-link main_nav" aria-current="page" href="/employees/list">EMPLOYEES</a>
                   <?php endif;?>
                   </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="/joke/list">Free</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/programming/list">Programming</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/english">English</a>
-                </li> -->
-                <!-- <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Not</a></li>
-                    <li><a class="dropdown-item" href="#">thing</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Comming soon here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled">Disabled</a>
-                </li> -->
+
                 <div id="login_box" >
                 <?php if ($loggedIn): ?>
                   <button type="button" class="btn btn-outline-secondary" onclick="location.href='/employee/detail?id=<?=$author->id ?? null ?>'"><?php echo $_SESSION['userid']; ?></button>
@@ -137,76 +108,44 @@
           </div>
         </nav>
 
-<!--
-<?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_USER)): ?>
-<div id="admin_box">
-  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/employees/list'">admin</button>
-  </div>
-  <?php endif ;?> -->
-<!-- <?php if($loggedIn) : ?>
-  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/employee/detail?id=<?=$author->id?>'">my page</button>
-<?php endif;?> -->
+    <main>
+      <?=$output?>
+    </main>
 
-      <!-- <nav>
-
+    <footer>
+      <div class="row">
+        <div class="col align-self-start footer_first_line">
+          <!-- <ul>
+            <li>page</li>
+            <li>notice</li>
+            <li>Q/A</li>
+            <li>more</li>
+          </ul> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col align-self-start footer_second_line">
           <ul>
-            <li><a href = "/"> Home </a></li>
-            <li><a href = "/joke/list"> 유머 글 목록 </a></li>
-            <li><a href = "/joke/edit"> 유머 글 등록</a></li>
-            <?php if ($loggedIn): ?>
-            <li><a href="/logout">로그아웃</a></li>
-            <?php else: ?>
-            <li><a href="/login">로그인</a></li>
-            <?php endif; ?>
+            <li>If you have any questions please contact to IT Team</li>
           </ul>
-
-      </nav> -->
-
-      <main>
-        <?=$output?>
-
-      </main>
-
-  <footer>
-    <div class="row">
-      <div class="col align-self-start footer_first_line">
-        <!-- <ul>
-          <li>page</li>
-          <li>notice</li>
-          <li>Q/A</li>
-          <li>more</li>
-        </ul> -->
+        </div>
       </div>
-
-      <!-- <div class="col align-self-end footer_social" style="text-align: right;">
-         <a href="https://www.facebook.com/" class="face" title="facebook" target="blank"></a>
-		  	<a href="https://twitter.com/b" class="twit" title="twitter" target="blank"></a>
-		  	<a href="https://www.instagram.com/" class="instar" title="instagram" target="blank"></a>
-      </div> -->
-    </div>
-    <div class="row">
-      <div class="col align-self-start footer_second_line">
-        <ul>
-          <li>If you have any questions please contact to IT Team</li>
-        </ul>
+      <div class="row">
+        <div class="col align-self-start footer_third_line">
+          <ul>
+            <li>EMAIL : admin@assiplaza.net</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col align-self-start footer_third_line">
-        <ul>
-          <li>EMAIL : admin@assiplaza.net</li>
-        </ul>
+      <div class="row">
+        <div class="col align-self-start footer_fourth_line">
+          <ul>
+            <li>ASSI PLAZA</li>
+            <li>ALL RIGHTS RESERVED</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col align-self-start footer_fourth_line">
-        <ul>
-          <li>ASSI PLAZA</li>
-          <li>ALL RIGHTS RESERVED</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+    </footer>
   </section>
 
 
