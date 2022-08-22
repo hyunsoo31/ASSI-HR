@@ -70,7 +70,7 @@ function result(){
 
   quiz_div.innerHTML = txt;
 
-  if(per<60){
+  if(per<80){
     txt += '<h2 ><a href="/fail1" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
     txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail1\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;

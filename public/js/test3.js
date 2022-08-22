@@ -61,16 +61,16 @@ function result(){
 
   quiz_div.innerHTML = txt;
 
-  if(per<60){
-    txt += '<h2 ><a href="/fail1" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
-    txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail1\'" style="font-size:2rem;">OK</button>';
+  if(per<80){
+    txt += '<h2 ><a href="/fail3" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
+    txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail3\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;
     document.querySelector('.score2').style.color = "red";
 
 
   } else {
-    txt += '<h2><a href="/pass1" style="color:green; font-size:40px; text-decoration: none;">PASS</h2>';
-    txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/pass1\'" style="font-size:2rem;">OK</button>';
+    txt += '<h2><a href="/pass3" style="color:green; font-size:40px; text-decoration: none;">PASS</h2>';
+    txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/pass3\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;
     // document.getElementById('score').style.color = "green";
     document.querySelector('.score2').style.color = "green";

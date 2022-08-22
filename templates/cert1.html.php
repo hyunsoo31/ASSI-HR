@@ -7,11 +7,11 @@
 
 </script>
 <div class="certification_box" style="">
-  <input type="hidden" name="capture_image" value="">
-  <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;">
+  <!-- <input type="hidden" name="capture_image" value="">
+  <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;"> -->
   <!-- <input type="button" onclick="capture_save_server('capture')" value="서버에 이미지 저장"> -->
 
-  <!--캡처 영영-->
+  <!--캡처 영역-->
   <br><br><br>
   <div id="capture">
     <br>
@@ -56,7 +56,6 @@
       <br>
       <br>
       <br>
-      <br>
         <div>First Name : <span style="font-size: 20px;"><?=$employee->firstName?><span></div>
         <div>Last Name : <span style="font-size: 20px;"><?=$employee->lastName?><span></div>
       <br>
@@ -91,10 +90,12 @@
  <!-- <input type="submit" name="submit" value="save"> -->
  <!-- <input type="hidden" name="capture_image" value="">
  <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;"> -->
+ 
 </form>
-
 </div>
-  </div>
+  <input type="hidden" name="capture_image" value="">
+  <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;">
+</div>
 <script>
 function capture_html(id){
   html2canvas(document.querySelector("#"+id)).then(canvas => {

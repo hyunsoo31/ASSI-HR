@@ -1,5 +1,5 @@
 <div class="login_error_box">
-  <h2 style="font-weight: bold;">Access Denied</h2>
+  <h2 style="font-weight: bold; color:red;">Access Denied</h2>
   <br>
   <h6 style="font-weight: 550; margin-bottom: 50px;">You need to sign in first.</h6>
   <p>Please sign in with your account.</p> 

@@ -1,7 +1,7 @@
 main{
     width: 110%;
     padding: 0;
-    margin-top: 70px;
+    margin-top: 77px;
     box-shadow: none;
     border: 0px;
 }
@@ -56,7 +56,7 @@ main{
 
 .home_box2::before{
     content: "";
-    opacity: 0.4;
+    opacity: 0.5;
     position: absolute;
     top: 0px;
     left: 0px;

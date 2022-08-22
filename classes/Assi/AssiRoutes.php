@@ -420,24 +420,21 @@ class AssiRoutes implements \Rheebros\Routes
           'controller' => $employeesController2,
           'action' => 'cert1'
         ],
-        'login' => true,
-        'permissions' => \Assi\Entity\Employee::USER_CREATE
+        'login' => true
       ],
       'certificate2' => [
         'GET' => [
           'controller' => $employeesController2,
           'action' => 'cert2'
         ],
-        'login' => true,
-        'permissions' => \Assi\Entity\Employee::USER_CREATE
+        'login' => true
       ],
       'certificate3' => [
         'GET' => [
           'controller' => $employeesController2,
           'action' => 'cert3'
         ],
-        'login' => true,
-        'permissions' => \Assi\Entity\Employee::USER_CREATE
+        'login' => true
       ],
       'fail2' => [
         'GET' => [

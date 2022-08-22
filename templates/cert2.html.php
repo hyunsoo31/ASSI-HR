@@ -7,8 +7,8 @@
 
 </script>
 <div class="certification_box" style="">
-  <input type="hidden" name="capture2_image" value="">
-  <input type="button" onclick="capture2_html('capture2')" value="save certificate" style="text-align: cetner;">
+  <!-- <input type="hidden" name="capture2_image" value="">
+  <input type="button" onclick="capture2_html('capture2')" value="save certificate" style="text-align: cetner;"> -->
   <!-- <input type="button" onclick="capture2_save_server('capture2')" value="서버에 이미지 저장"> -->
 
   <!--캡처 영영-->
@@ -56,7 +56,6 @@
       <br>
       <br>
       <br>
-      <br>
         <div>First Name : <span style="font-size: 20px;"><?=$employee->firstName?><span></div>
         <div>Last Name : <span style="font-size: 20px;"><?=$employee->lastName?><span></div>
       <br>
@@ -94,7 +93,9 @@
 </form>
 
 </div>
-  </div>
+  <input type="hidden" name="capture2_image" value="">
+  <input type="button" onclick="capture2_html('capture2')" value="save certificate" style="text-align: cetner;">
+</div>
 <script>
 function capture2_html(id){
   html2canvas(document.querySelector("#"+id)).then(canvas => {

@@ -38,7 +38,7 @@
                   <li>
                   <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MA PAGE</a>
                   </li>
-         
+                  <?php if ($loggedIn): ?>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         ORIENTATION
@@ -77,6 +77,7 @@
                       <?php endif;?>
                       </ul>
                     </li>
+                    <?php endif; ?>
 
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_TR)) : ?>
                   <li>

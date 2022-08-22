@@ -47,18 +47,24 @@ function result(){
 
   var per = parseInt((quiz.score*100)/quiz.questions.length);
 
-  var txt = '<h2>결과</h2>' + quiz.score + '/' + quiz.questions.length + '<h2 id="score">당신의 점수: ' +  '<br><br>'+per+'%</h2>';
+  var txt = '<h1 style="padding:0.5em;">RESULT</h1>' +'<span style="font-size: 35px">'+quiz.score + '/' + quiz.questions.length+'</span>'+ '<h1 id="score"">YOUR SCORE: </h1>' +'<h1 class="score2"  style="padding-top:0;">'+per+'%</h1>';
 
   quiz_div.innerHTML = txt;
 
-  if(per<60){
-    txt += '<h2 style="color:red"><a href="/fail2">FAIL</a></h2>';
+  if(per<80){
+    txt += '<h2 ><a href="/fail2" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
+    txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail2\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;
+    document.querySelector('.score2').style.color = "red";
+
 
   } else {
-    txt += '<h2 style="color:green"><a href="/pass2">PASS</h2>';
+    txt += '<h2><a href="/pass2" style="color:green; font-size:40px; text-decoration: none;">PASS</h2>';
+    txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/pass2\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;
-
+    // document.getElementById('score').style.color = "green";
+    document.querySelector('.score2').style.color = "green";
+    
   }
 }
 

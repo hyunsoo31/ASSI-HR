@@ -26,3 +26,9 @@
     flex-direction:column;
     padding: 10px;
 }
+
+.certification_box > input{
+    text-align: center;
+    position: relative;
+    left: 45%;
+}

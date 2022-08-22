@@ -6,13 +6,13 @@
 //   });
 // });
 
-// $(window).on('scroll',function(){
-//     if($(window).scrollTop()){
-//         $('nav').addClass('active');
-//     }else{
-//         $('nav').removeClass('active');
-//     }
-// });
+$(window).on('scroll',function(){
+    if($(window).scrollTop()){
+        $('nav').addClass('active');
+    }else{
+        $('nav').removeClass('active');
+    }
+});
 
 // $('.dropdown').click(function(event){
 //     return false;
