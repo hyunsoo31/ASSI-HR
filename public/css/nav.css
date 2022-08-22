@@ -45,9 +45,10 @@ nav.active .img-logo {
   content: url(/images/assi_logo_white.png);
 }
 
-nav.active .nav-item{
-  /* background: white; */
+.dropdown:hover > .dropdown-menu {
+  display: block;
 }
+
 
 #bar{
   display: none;

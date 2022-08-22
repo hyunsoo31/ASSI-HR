@@ -74,11 +74,11 @@ if(strpos($_SERVER['REQUEST_URI'], "kor")):?>
         </div>
      </div>
     <div id="body" style="padding: 50px;">
-    <div  style="font-size: 20px; justify-content:space-around; font-weight: 700;">
+    <div  style="font-size: 20px; justify-content:space-around; font-weight: 700; text-align:center;">
     테스트 정보
     </div>
     <br>
-    <div  style="font-size: 20px; justify-content:space-around;">
+    <div  style="font-size: 20px; justify-content:space-around; text-align:center;">
     * 시간 제한 없음
     <br>
     * 10개의 문항
@@ -87,11 +87,11 @@ if(strpos($_SERVER['REQUEST_URI'], "kor")):?>
     </div>
     <br>
     <br>
-    <div  style="font-size: 20px; justify-content:space-around; font-weight: 700;">
+    <div  style="font-size: 20px; justify-content:space-around; font-weight: 700; text-align:center;">
     테스트 끝내신 후
     </div>
     <br>
-    <div style="font-size: 20px; justify-content:space-around;">
+    <div style="font-size: 20px; justify-content:space-around; text-align:center;">
     * OK 버튼을 클릭하여 메인 페이지로 나가실 수 있습니다.
     </div>
 

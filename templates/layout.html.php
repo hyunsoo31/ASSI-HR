@@ -40,7 +40,7 @@
                   </li>
          
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         ORIENTATION
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -50,7 +50,7 @@
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         INSURANCE
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
