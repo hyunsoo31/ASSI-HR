@@ -36,7 +36,7 @@
                    <a class="nav-link main_nav" aria-current="page" href="/">HOME</a>
                   </li>   
                   <li>
-                  <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MA PAGE</a>
+                  <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MY PAGE</a>
                   </li>
                   <?php if ($loggedIn): ?>
                     <li class="nav-item dropdown">
