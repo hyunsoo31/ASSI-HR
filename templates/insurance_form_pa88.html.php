@@ -321,7 +321,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"description":"","name":"initial2","qi
         <div id="cid_44" class="form-input-wide" data-layout="half">
           <span class="form-sub-label-container" style="vertical-align:top">
             <input type="text" id="input_44" name="q44_initial44" data-type="input-textbox" class="form-textbox validate[Alphabetic]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_44 sublabel_input_44" />
-            <label class="form-sub-label" for="input_44" id="sublabel_input_44" style="min-height:13px" aria-hidden="false"> First letter of your first name </label>
+            <label class="form-sub-label" for="input_44" id="sublabel_input_44" style="width: 200px; min-height:13px;" aria-hidden="false"> First letter of your first name </label>
           </span>
         </div>
       </li>
@@ -608,7 +608,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"description":"","name":"initial2","qi
         <div id="cid_2" class="form-input-wide jf-required" data-layout="half">
           <span class="form-sub-label-container" style="vertical-align:top">
             <input type="text" id="input_2" name="q2_initial2" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:20px" size="20" value="" data-component="textbox" aria-labelledby="label_2 sublabel_input_2" required="" />
-            <label class="form-sub-label" for="input_2" id="sublabel_input_2" style="min-height:13px" aria-hidden="false"> First letter of your first name </label>
+            <label class="form-sub-label" for="input_2" id="sublabel_input_2" style="width: 200px; min-height:13px;" aria-hidden="false"> First letter of your first name </label>
           </span>
         </div>
       </li>
@@ -629,7 +629,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"description":"","name":"initial2","qi
         <div id="cid_38" class="form-input-wide jf-required" data-layout="half">
           <span class="form-sub-label-container" style="vertical-align:top">
             <input type="text" id="input_38" name="q38_initial" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_38 sublabel_input_38" required="" />
-            <label class="form-sub-label" for="input_38" id="sublabel_input_38" style="min-height:13px" aria-hidden="false"> First letter of your first name </label>
+            <label class="form-sub-label" for="input_38" id="sublabel_input_38" style="width: 200px; min-height:13px;" aria-hidden="false"> First letter of your first name </label>
           </span>
         </div>
       </li>
@@ -650,7 +650,7 @@ JotForm.paymentExtrasOnTheFly([null,null,{"description":"","name":"initial2","qi
         <div id="cid_40" class="form-input-wide jf-required" data-layout="half">
           <span class="form-sub-label-container" style="vertical-align:top">
             <input type="text" id="input_40" name="q40_initial40" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_40 sublabel_input_40" required="" />
-            <label class="form-sub-label" for="input_40" id="sublabel_input_40" style="min-height:13px" aria-hidden="false"> First letter of your first name </label>
+            <label class="form-sub-label" for="input_40" id="sublabel_input_40" style="width: 200px; min-height:13px;" aria-hidden="false"> First letter of your first name </label>
           </span>
         </div>
       </li>

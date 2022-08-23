@@ -40,8 +40,8 @@ input#email, input#name, input#password {
 
 .login_box {
   flex-direction: column;
-  margin: 30px auto;
-  width: 600px;
+  /* margin: 30px auto; */
+  /* width: 600px; */
   /* height: 600px; */
   display: flex;
   flex-wrap: wrap;
@@ -175,4 +175,10 @@ th{
 
 td{
   background-color: rgba(0 0 0/0%);
+}
+
+
+#login_box button {
+  width: 120px;
+  height: 40px;
 }

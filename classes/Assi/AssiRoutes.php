@@ -534,6 +534,13 @@ class AssiRoutes implements \Rheebros\Routes
         ],
          'login' => true
       ],
+      'employee/view' => [
+        'GET' => [
+          'controller' => $employeesController2,
+          'action' => 'employeeview'
+        ],
+         'login' => true
+      ],
       'employee/edit' => [
         'POST' => [
           'controller' => $employeesController,

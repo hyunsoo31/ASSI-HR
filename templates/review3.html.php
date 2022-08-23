@@ -43,7 +43,7 @@
       }
     }
   } else{
-    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/KOR/T3s';
+    $dir =  $_SERVER['DOCUMENT_ROOT'].'/uploads/KOR/T3';
     $handle = opendir($dir);
     $files = array();
 

@@ -60,7 +60,7 @@
   
 <body>
   <div class="title lastcheck" onclick="location.href='insurance_form_ga55'">
-    <button class="custom-btn btn-4">Go to fill out insurance form</button>
+    <button class="custom-btn btn-4">Start filling insurance form</button>
   </div>
   <div class="slider">
     

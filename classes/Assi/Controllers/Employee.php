@@ -338,6 +338,26 @@ class Employee {
   //   ];
   // }
 
+  
+  public function employeeview() {
+    $author = $this->authentication->getUser();
+    $trainings = $this->trainingTable->findAll();
+
+
+
+    if (isset($_GET['id'])) {
+      $employee = $this->employeesTable->findById($_GET['id']);
+
+    }
+    $title = '직원 정보';
+
+    return [
+      'template' => 'employeeview.html.php',
+      'title' => $title,
+      'variables' => [ 'employee' => $employee ?? null, 'author' => $author]
+    ];
+  }
+
   public function employeedetail2() {
     $author = $this->authentication->getUser();
     $trainings = $this->trainingTable->findAll();
