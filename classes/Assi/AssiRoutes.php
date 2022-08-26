@@ -37,9 +37,9 @@ class AssiRoutes implements \Rheebros\Routes
     // $authorController = new \Ijdb\Controllers\Register($authorsTable);
 
     $trainingController = new \Assi\Controllers\Training($this->trainingTable);
-    $employeesController = new \Assi\Controllers\Register($this->employeesTable, $this->trainingTable, $this->authentication, $this->employeeTrainingsTable);
+    $registerController = new \Assi\Controllers\Register($this->employeesTable, $this->trainingTable, $this->authentication, $this->employeeTrainingsTable);
     $loginController = new \Assi\Controllers\Login($this->authentication);
-    $employeesController2 = new \Assi\Controllers\Employee($this->employeesTable, $this->trainingTable, $this->authentication, $this->employeeTrainingsTable);
+    $employeeController = new \Assi\Controllers\Employee($this->employeesTable, $this->trainingTable, $this->authentication, $this->employeeTrainingsTable);
     $employeeTrainingController = new \Assi\Controllers\EmployeeTraining($this->employeesTable, $this->employeeTrainingsTable, $this->authentication);
     // $categoryController = new \Assi\Controllers\Category($this->categoriesTable);
 
@@ -52,11 +52,11 @@ class AssiRoutes implements \Rheebros\Routes
     $routes = [
       'employees/permissions' => [
         'GET' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'permissions'
         ],
         'POST' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'savePermissions'
         ],
         'login' => true,
@@ -70,7 +70,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'employees/list' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'list'
         ],
         'login' => true,
@@ -78,11 +78,11 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'employee/permissions' => [
         'GET' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'permissions'
         ],
         'POST' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'savePermissions'
         ],
         'login' => true,
@@ -395,98 +395,98 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'fail1' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'fail1'
         ],
         'POST' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'saveEdit3'
         ],
         'login' => true
       ],
       'pass1' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'pass1'
         ],
         'POST' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'saveEdit3'
         ],
         'login' => true
       ],
       'certificate1' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'cert1'
         ],
         'login' => true
       ],
       'certificate2' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'cert2'
         ],
         'login' => true
       ],
       'certificate3' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'cert3'
         ],
         'login' => true
       ],
       'fail2' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'fail2'
         ],
         'POST' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'saveEdit3'
         ],
         'login' => true
       ],
       'pass2' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'pass2'
         ],
         'POST' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'saveEdit3'
         ],
         'login' => true
       ],
       'fail3' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'fail3'
         ],
         'POST' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'saveEdit3'
         ],
         'login' => true
       ],
       'pass3' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'pass3'
         ],
         'POST' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'saveEdit3'
         ],
         'login' => true
       ],
       'employee/register' => [
         'GET' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'registrationForm'
         ],
         'POST' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'registerUser'
         ],
         'login' => true,
@@ -494,7 +494,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'employee/success' => [
         'GET' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'success'
         ]
       ],
@@ -529,32 +529,32 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'employee/detail' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'employeedetail2'
         ],
          'login' => true
       ],
       'employee/view' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'employeeview'
         ],
          'login' => true
       ],
       'employee/edit' => [
         'POST' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'saveEdit'
         ],
         'GET' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'edit'
         ],
         'login' => true
       ],
       'employee/delete' => [
         'POST' => [
-          'controller' => $employeesController,
+          'controller' => $registerController,
           'action' => 'delete'
         ],
         'login' => true,
@@ -575,21 +575,21 @@ class AssiRoutes implements \Rheebros\Routes
 
       'orientation_kor' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'orientation'
         ],
          'login' => true
       ],
       'orientation_eng' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'orientation'
         ],
          'login' => true
       ],
       'orientation_spn' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'orientation'
         ],
          'login' => true
@@ -597,14 +597,14 @@ class AssiRoutes implements \Rheebros\Routes
 
       'insurance' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true
       ],
       'insurance_ga55_kor' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -612,7 +612,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_ga55_eng' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -620,7 +620,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_ga55_spn' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -628,7 +628,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_il70_kor' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -636,7 +636,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_il70_eng' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -644,7 +644,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_il70_spn' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -652,7 +652,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_pa88_kor' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -660,7 +660,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_pa88_eng' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -668,7 +668,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_pa88_spn' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance'
         ],
          'login' => true,
@@ -677,7 +677,7 @@ class AssiRoutes implements \Rheebros\Routes
 
       'insurance_form_ga55' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance_form'
         ],
          'login' => true,
@@ -685,7 +685,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_form_il70' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance_form'
         ],
          'login' => true,
@@ -693,7 +693,7 @@ class AssiRoutes implements \Rheebros\Routes
       ],
       'insurance_form_pa88' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'insurance_form'
         ],
          'login' => true,
@@ -709,14 +709,20 @@ class AssiRoutes implements \Rheebros\Routes
       // ],
       'example' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'pdf'
+        ]
+      ],
+      'buzz' => [
+        'GET' => [
+          'controller' => $employeeController,
+          'action' => 'buzz'
         ]
       ],
 
       '' => [
         'GET' => [
-          'controller' => $employeesController2,
+          'controller' => $employeeController,
           'action' => 'home'
         ]
       ]

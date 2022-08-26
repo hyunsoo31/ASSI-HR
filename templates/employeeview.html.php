@@ -32,7 +32,6 @@
 
         <div>EEID: <span><?=$employee->EEID ?? '' ?></span></div>
         <div>First Name: <span><?=$employee->firstName ?? '' ?></span></div>
-        <div>Middle Name: <span><?=$employee->middleName ?? '' ?></span></div>
         <div>Last Name: <span><?=$employee->lastName ?? '' ?></span></div>
         <div>Gender: <span><?=$employee->gender ?? '' ?></span></div>
         <div>Phone: <span><?=$employee->phone ?? '' ?></span></div>

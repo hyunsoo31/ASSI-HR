@@ -37,8 +37,6 @@
         <input type="text" name="employee[EEID]" disabled value="<?=$employee->EEID ?? '' ?>">
         <label for="firstName"> First Name: </label>
         <input type="text" name="employee[firstName]" value="<?=$employee->firstName ?? '' ?>">
-        <label for="middleName"> Middle Name: </label>
-        <input type="text" name="employee[middleName]" value="<?=$employee->middleName ?? '' ?>">
         <label for="lastName"> LastName: </label>
         <input type="text" name="employee[lastName]" value="<?=$employee->lastName ?? '' ?>">
         <label for="gender"> Gender: </label>
@@ -64,7 +62,7 @@
         <label for="store"> Store: </label>
         <input type="text" name="employee[store]" value="<?=$employee->store ?? '' ?>">
 
-        <input type="submit" name="submit" value="save">
+        <input type="submit" name="submit" value="save" style="float: right; margin-top: 20px;">
         </form>
 
     <?php else:?>
@@ -78,7 +76,7 @@
       </div>
       <button class="btn2 color-a top"> Hire me</button> -->
 
-      <hr class="hr-2">
+      <!-- <hr class="hr-2"> -->
       <div class="container">
         <div class="content">
 

@@ -24,7 +24,7 @@ class Employee {
     $offset = ($page-1)*10;
     $author = $this-> authentication->getUser();
 
-    $trainings = $this->trainingTable->findAll();
+    // $trainings = $this->trainingTable->findAll();
     $employeeTrainings = $this->employeeTrainingsTable->findAll();
 
     if(isset($_GET['store']) and $_GET['store']=='GA55')
@@ -92,22 +92,6 @@ class Employee {
       $title = '직원 목록';
     }
 
-
-    // // $totalJokes = totalJokes($pdo, 'joke');
-    //   $totalJokes = $this->jokesTable->total();
-
-
-    // // 버퍼 저장 시작
-    // ob_start();
-    // //템플릿을 include한다. PHP 코드가 실행되지만 결과 HTML은 브라우저로 전송되지 않고 버퍼에 저장된다.
-    // $output = include  __DIR__ .'/../templates/jokes.html.php';
-
-    // // 출력 버퍼의 내용을 읽고 $output 변수에 저장한다. $output은 layout.html.php에서 사용된다.
-
-    // $output = ob_get_clean();
-
-    // return ['output' => $output, 'title' => $title];
-
     return [
     'template'=> 'employeeslist.html.php',
      'title'=>$title,
@@ -115,13 +99,10 @@ class Employee {
        'totalEmployees' => $totalEmployees,
        'numPages' => $numPages,
        'employees' => $employees,
-      //  'training' => $this->trainingTable->findAll(),
-       //'user' => $author, //  'userId' =>$author->id ?? null,
-       //'categories' =>$this->categoriesTable->findAll(),
        'currentPage' => $page,
        'store' => $_GET['store'] ?? null,
        'author' => $author,
-       'trainings'=>$trainings ?? null,
+      //  'trainings'=>$trainings ?? null,
        'employeeTrainings' => $employeeTrainings ?? null
       ]
     ];
@@ -612,5 +593,12 @@ class Employee {
     ];
   }
 
+
+  public function buzz() {
+
+
+    $title = 'Assi';
+    return ['template' => 'buzz.html.php', 'title' => $title];
+  }
 
 }

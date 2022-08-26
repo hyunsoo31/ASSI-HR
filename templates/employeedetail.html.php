@@ -73,7 +73,7 @@
 
   <!--card-2-->
 
-      <div class="grid-7 element-animation">
+      <div class="grid-10 element-animation">
         <div class="card2 color-card-2">
         <?php foreach ($employeeTrainings as $employeetraining) : ?>
       <?php if($employee && $employee->EEID == $employeetraining->EE_ID):?>

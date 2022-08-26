@@ -71,7 +71,7 @@
         <span>Email</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">jhjeong@assiplaza.net</span>
       </label>
       <label>
-        <span>Phone</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">000-000-0000</span>
+        <span>Phone</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">410-292-2424</span>
       </label>
       </div>
       <!-- <button type="button" class="submit">Sign Up</button>

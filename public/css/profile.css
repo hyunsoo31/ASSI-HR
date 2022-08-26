@@ -182,7 +182,7 @@ body{
     width:280px;
   }
   .container {
-      /* width: 960px; */
+      width: 1020px;
       margin: 0 auto;
       padding: 0px;
       position: relative;
@@ -232,7 +232,8 @@ body{
   
   /*cards*/
   body {
-    background: #e2e1e0;
+    /* background: #e2e1e0; */
+    background: #fff;
     text-align: center;
   }
   

@@ -12,39 +12,15 @@
 <div class="content_box">
 
 
-
-    <!-- <form class="" action="">
-      <div class="search">
-          <input type="text" name="DEPT" value="" placeholder="DEPT을 입력하세요" style="width: 200px;">
-          <button type="submit">검색</button>
-      </div>
-    </form> -->
-
-
-
     <div class="user_list_box">
     <h2>EMPLOYEES LIST</h2>
-    <div class="storelist">
-      <h3>STORE</h3>
-        <ul class="store">
-            <li class="store_nav"><a href="/employees/list?page=1">ALL</a><li>
-            <li class="store_nav"><a href="/employees/list?page=1&store=GA55">GA55</a><li>
-            <li class="store_nav"><a href="/employees/list?page=1&store=IL70">IL70</a><li>
-            <li class="store_nav"><a href="/employees/list?page=1&store=PA88">PA88</a><li>
 
-        </ul>
-        <h3>DOL STATUS</h3>
-        <ul class="dol">
-            <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Full-Time">FULL-TIME</a><li>
-            <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Part-Time">PART-TIME</a><li>
-        </ul>
-    </div>
     
     <?php if($author->hasPermission(\Assi\Entity\Employee::USER_CREATE)): ?>
     <button type="button" class="btn btn-outline-secondary new_employee_btn" onclick="location.href='/employee/register'">NEW EMPLOYEE</button>
     <?php endif;?>
-    <form action="">
-      <div style="display: flex; height: 80px; justify-content: center; align-items: center;">
+    <form action="" style="overflow: hidden;">
+      <div style="display: flex; height: 82px; align-items: center;">
         <div class="select-box">
         <select id="changeTest" onchange="selectBoxChange(this.value);">
           <option value="fistName">FIRSTNAME</option>
@@ -63,6 +39,24 @@
             </a>
           </button>
         </div>
+        <div class="storelist">
+        <h3>STORE</h3>
+          <ul class="store">
+              <li class="store_nav"><a href="/employees/list?page=1">ALL</a><li>
+              <li class="store_nav"><a href="/employees/list?page=1&store=GA55">GA55</a><li>
+              <li class="store_nav"><a href="/employees/list?page=1&store=IL70">IL70</a><li>
+              <li class="store_nav"><a href="/employees/list?page=1&store=PA88">PA88</a><li>
+
+          </ul>
+        </div>
+        <div class="storelist2">
+        <h3>DOL STATUS</h3>
+        <ul class="store">
+            <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Full-Time">FULL-TIME</a><li>
+            <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Part-Time">PART-TIME</a><li>
+        </ul>
+        </div>
+      
      </div>
     </form>
     <div class="user_list">
@@ -70,7 +64,7 @@
       <thead>
         <th>EEID</th>
         <th>FIRST NAME</th>
-        <th>MIDDLE NAME</th>
+    
         <th>LAST NAME</th>
         <th>GENDER</th>
         <th>DOL STATUS</th>
@@ -94,7 +88,7 @@
           <tr style="text-align:center;">
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->EEID;?></td>
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->firstName;?></td>
-            <td><?=$employee->lastName;?></td>
+
             <td><?=$employee->lastName;?></td>
             <td><?=$employee->gender;?></td>
             <td><?=$employee->DOLStatus;?></td>
@@ -167,7 +161,8 @@
     <?php else: ?>
       <a href="/employees/list?page=<?=$i?><?=!empty($_GET['store']) ? '&store=' . $store : '' ?><?=!empty($_GET['firstName']) ? '&firstName=' . $_GET['firstName'] : '' ?>
 <?=!empty($_GET['DEPT']) ? '&DEPT=' . $_GET['DEPT'] : '' ?><?=!empty($_GET['lastName']) ? '&lastName=' . $_GET['lastName'] : '' ?>
-<?=!empty($_GET['position']) ? '&position=' . $_GET['position'] : '' ?>"><?=$i?></a>
+<?=!empty($_GET['position']) ? '&position=' . $_GET['position'] : '' ?>
+<?=!empty($_GET['DOLStatus']) ? '&DOLStatus=' . $_GET['DOLStatus'] : '' ?>"><?=$i?></a>
     <?php endif; ?>
     <?php endfor; ?>
 
