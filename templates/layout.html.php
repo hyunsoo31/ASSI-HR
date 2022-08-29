@@ -39,7 +39,7 @@
                   <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MY PAGE</a>
                   </li>
                   <?php if ($loggedIn): ?>
-                    <li class="nav-item dropdown">
+                    <li class="nav-link dropdown">
                       <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         ORIENTATION
                       </a>
@@ -49,7 +49,7 @@
                         <li><a class="dropdown-item" href="/orientation_spn">ORIENTATION(SPN)</a></li>
                       </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-link dropdown">
                       <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         INSURANCE
                       </a>
@@ -84,12 +84,11 @@
                   <a class="nav-link main_nav" aria-current="page" href="/training/list">TRAINING</a>
                   </li>
                   <?php endif;?>
-                  <li>
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_USER)): ?>
+                  <li>
                   <a class="nav-link main_nav" aria-current="page" href="/employees/list">EMPLOYEES</a>
-                  <?php endif;?>
                   </li>
-
+                  <?php endif;?>
                 <div id="login_box" >
                 <?php if ($loggedIn): ?>
                   <button type="button" class="btn btn-outline-secondary" onclick="location.href='/employee/detail?id=<?=$author->id ?? null ?>'"><?php echo $_SESSION['userid']; ?></button>
@@ -228,6 +227,7 @@ else{
 
 </script>
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="/js/main.js"></script>
 <!-- <script src="/js/menu.js"></script> -->
@@ -247,4 +247,6 @@ toggle_bnt.addEventListener('click',()=>{
     nav.classList.toggle('mobile_active')
 });
 </script>
+
+
 </html>

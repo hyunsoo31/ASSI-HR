@@ -264,3 +264,20 @@ main{
     align-content: space-around;
     align-items: center;
 }
+
+@media all and (max-width: 875px) {
+    .cont{
+        width: 300px;
+    }
+    .form{
+        width: 245px;
+        margin: 10px auto;
+        padding: 10px;
+    }
+    .sub-cont{
+        display: none;
+    }
+    h2{
+        font-size: 15px;
+    }
+}

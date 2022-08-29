@@ -71,6 +71,7 @@ $(document).ready(function(){
                  <option value="" disabled selected>Pay Type</option>
                   <option value="<?=$author['payType'] ?? 'Hourly'?>">Hourly</option>
                   <option value="<?=$author['payType'] ?? 'Salary'?>">Salary</option>
+                  <option value="<?=$author['payType'] ?? 'Commission Only'?>">Commission only</option>
                 </select>
                 <label for="DOLStatus">DOL Status</label>
                 <!-- <input name="author[DOLStatus]" id="DOLStatus" type="text" value = "<?=$author['DOLStatus'] ?? ''?>"> -->
@@ -78,11 +79,34 @@ $(document).ready(function(){
                   <option value="" disabled selected>DOL Status</option>
                   <option value="<?=$author['payType'] ?? 'Full-Time'?>">Full-Time</option>
                   <option value="<?=$author['payType'] ?? 'Part-Time'?>">Part-Time</option>
+                  <option value="<?=$author['payType'] ?? 'Temporary'?>">Temporary</option>
+                  <option value="<?=$author['payType'] ?? 'Seasonal'?>">Seasonal</option>
                 </select>
                 <label for="department">Department</label>
-                <input name="author[department]" id="department" type="text" value = "<?=$author['department'] ?? ''?>">
+                <select name="author[department]" id="department" required>
+                  <option value="" disabled selected>DOL Status</option>
+                  <option value="<?=$author['department'] ?? 'Office'?>">Office</option>
+                  <option value="<?=$author['department'] ?? 'C/S'?>">C/S</option>
+                  <option value="<?=$author['department'] ?? 'Cashier'?>">Cashier</option>
+                  <option value="<?=$author['department'] ?? 'Grocery'?>">Grocery</option>
+                  <option value="<?=$author['department'] ?? 'Produce'?>">Produce</option>
+                  <option value="<?=$author['department'] ?? 'Meat'?>">Meat</option>
+                  <option value="<?=$author['department'] ?? 'Fish'?>">Fish</option>
+                  <option value="<?=$author['department'] ?? 'Houseware'?>">Houseware</option>
+                  <option value="<?=$author['department'] ?? 'Deli'?>">Deli</option>
+                  <option value="<?=$author['department'] ?? 'Wholesale'?>">Wholesale</option>
+                  <option value="<?=$author['department'] ?? 'Receiving'?>">Receiving</option>
+                  <option value="<?=$author['department'] ?? 'IT'?>">IT</option>
+                </select>
                 <label for="position">Position</label>
-                <input name="author[position]" id="position" type="text" value = "<?=$author['position'] ?? ''?>">
+                <select name="author[position]" id="position" required>
+                  <option value="" disabled selected>DOL Status</option>
+                  <option value="<?=$author['position'] ?? 'Manager'?>">Manager</option>
+                  <option value="<?=$author['position'] ?? 'Team Leader'?>">Team Leader</option>
+                  <option value="<?=$author['position'] ?? 'Staff'?>">Staff</option>
+                  <option value="<?=$author['position'] ?? 'Store Manager'?>">Store Manger</option>
+                  <option value="<?=$author['position'] ?? 'Assitant Store Manager'?>">Assitant Store Manger</option>
+                </select>
                 <label for="hireDate">Hire Date</label>
                 <input name="author[hireDate]" id="hireDate" type="date" value = "<?=$author['hireDate'] ?? ''?>">
                 <!-- <label for="permission">permission</label>

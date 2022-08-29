@@ -132,7 +132,7 @@ nav.active li:hover #sub-menu2{
   /* nav.active{
     height: 100px !important;
   } */
-  nav ul {
+  .navbar__menu {
    flex-direction: column !important;
    display: none !important; 
   }
@@ -151,7 +151,7 @@ nav.active li:hover #sub-menu2{
     height: 200px !important;
   }
   nav.mobile_active {
-    height: 250px;
+    height: 275px;
   }
 
   .collapse {
@@ -165,8 +165,8 @@ nav.active li:hover #sub-menu2{
   }
   #login_box{
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 210px;
+    right: 0px;
   }
   #login_box .btn{
     font-size: 2rem;

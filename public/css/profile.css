@@ -396,3 +396,22 @@ body{
   font-size: 15px;
   font-weight: 600;
 }
+
+
+@media all and (max-width: 875px) {
+  .container{
+    width: 420px;
+  }
+
+  .card2 {
+    width: 420px;
+    margin: 10px auto;
+  }
+  .grid-10{
+    width: 420px;
+  }
+
+  #edit_form{
+    padding: 10px;
+  }
+}

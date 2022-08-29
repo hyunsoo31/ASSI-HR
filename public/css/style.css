@@ -143,9 +143,9 @@ blockquote form {  display: table-cell; width: 10%;}
   border: 1px solid red;
   background-color: lightyellow;
   color: red;
-  margin-bottom: 1em;
-  margin-right: 1em;
+  margin: 20px auto;
   overflow: auto;
+  width: 240px;
 }
 
 .errors ul {

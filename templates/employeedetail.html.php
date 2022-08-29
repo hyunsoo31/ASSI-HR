@@ -44,15 +44,10 @@
             <p class="followers"><?=$employee->store?></p>
           </div>
           <div class="grid-2">
-            <button class="color-c circule" disabled>
-            <?php if($employee->gender == "Male"):?>
-              <i class="fas fa-male fa-2x"></i>
-            <?php endif;?>
-            <?php if($employee->gender == "Female"):?>
-              <i class="fas fa-female fa-2x"></i>
-            <?php endif;?>
+            <button class="color-c circule" disabled> 
+              <i class="fas fa-dollar-sign fa-2x"></i>
             </button>
-            <p class="followers"><?=$employee->gender?></p>
+            <p class="followers"><?=$employee->payType?></p>
           </div>
           <div class="grid-2">
             <button class="color-d circule" disabled>
@@ -61,6 +56,9 @@
             <?php endif;?>
             <?php if($employee->DOLStatus == "Full-Time"):?>
               <i class="fas fa-user fa-2x"></i>
+            <?php endif;?>
+            <?php if($employee->DOLStatus == "Commission Only"):?>
+              <i class="fas fa-user-check fa-2x"></i>
             <?php endif;?>
             </button>
             <p class="followers"><?=$employee->DOLStatus?></p>
