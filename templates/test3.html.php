@@ -44,7 +44,7 @@
 
       </div> <!--end quiz-->
     </div> <!-- end grid-->
-    <script defer src="../js/test3_eng.js"></script>
+    <script defer src="../js/test3.js"></script>
     <?php endif;?>
 
     <?php if(strpos($_SERVER['REQUEST_URI'], "spn")): ?>
@@ -65,7 +65,7 @@
 
       </div> <!--end quiz-->
     </div> <!-- end grid-->
-    <script defer src="../js/test3_eng.js"></script>
+    <script defer src="../js/test3.js"></script>
     <?php endif;?>
   </body>
 

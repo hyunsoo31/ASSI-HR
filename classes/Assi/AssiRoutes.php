@@ -361,7 +361,7 @@ class AssiRoutes implements \Rheebros\Routes
       'test2_eng' => [
         'GET' => [
           'controller' => $trainingController,
-          'action' => 'test2_eng'
+          'action' => 'test2'
         ],
         'login' => true
       ],
@@ -382,7 +382,7 @@ class AssiRoutes implements \Rheebros\Routes
       'test2_spn' => [
         'GET' => [
           'controller' => $trainingController,
-          'action' => 'test2_spn'
+          'action' => 'test2'
         ],
         'login' => true
       ],

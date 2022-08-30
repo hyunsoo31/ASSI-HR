@@ -143,39 +143,39 @@ class Employee {
 
     if(strpos($_SERVER['REQUEST_URI'], "eng") && strpos($_SERVER['REQUEST_URI'], "ga55")){
       $title = 'Insurance(eng)';
-      return ['template' => 'insurance_ga55.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "spn") && strpos($_SERVER['REQUEST_URI'], "ga55")) {
       $title = 'Insurance(spn)';
-      return ['template' => 'insurance_ga55.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "kor") && strpos($_SERVER['REQUEST_URI'], "ga55")) {
       $title = 'Insurance(kor)';
-      return ['template' => 'insurance_ga55.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "eng") && strpos($_SERVER['REQUEST_URI'], "il70")) {
       $title = 'Insurance(eng)';
-      return ['template' => 'insurance_il70.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "spn") && strpos($_SERVER['REQUEST_URI'], "il70")) {
       $title = 'Insurance(spn)';
-      return ['template' => 'insurance_il70.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "kor") && strpos($_SERVER['REQUEST_URI'], "il70")) {
       $title = 'Insurance(kor)';
-      return ['template' => 'insurance_il70.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "eng") && strpos($_SERVER['REQUEST_URI'], "pa88")) {
       $title = 'Insurance(eng)';
-      return ['template' => 'insurance_pa88.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "spn") && strpos($_SERVER['REQUEST_URI'], "pa88")) {
       $title = 'Insurance(spn)';
-      return ['template' => 'insurance_pa88.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "kor") && strpos($_SERVER['REQUEST_URI'], "pa88")) {
       $title = 'Insurance(kor)';
-      return ['template' => 'insurance_pa88.html.php', 'title' => $title];
+      return ['template' => 'insurance.html.php', 'title' => $title];
     }
     
   }

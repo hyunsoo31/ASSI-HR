@@ -46,7 +46,7 @@ class Training
     $trainings = $this->trainingTable->findAll();
     $title = 'Training 목록';
 
-    return ['template' => 'training.html.php',
+    return ['template' => 'traininglist.html.php',
             'title' => $title,
             'variables' => [
               'trainings' => $trainings
@@ -107,15 +107,15 @@ class Training
 
     if(strpos($_SERVER['REQUEST_URI'], "eng")){
       $title = 'Training1(eng)';
-      return ['template' => 'training1.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
       $title = 'Training1(spn)';
-      return ['template' => 'training1.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
     else{
       $title = 'Training1(kor)';
-      return ['template' => 'training1.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
   }
 
@@ -123,15 +123,15 @@ class Training
 
     if(strpos($_SERVER['REQUEST_URI'], "eng")){
       $title = 'Training2(eng)';
-      return ['template' => 'training2.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
       $title = 'Training2(spn)';
-      return ['template' => 'training2.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
     else{
       $title = 'Training2(kor)';
-      return ['template' => 'training2.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
   }
 
@@ -139,15 +139,15 @@ class Training
 
     if(strpos($_SERVER['REQUEST_URI'], "eng")){
       $title = 'Training3(eng)';
-      return ['template' => 'training3.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
     elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
       $title = 'Training3(spn)';
-      return ['template' => 'training3.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
     else{
       $title = 'Training3(kor)';
-      return ['template' => 'training3.html.php', 'title' => $title];
+      return ['template' => 'training.html.php', 'title' => $title];
     }
   }
 
@@ -406,8 +406,18 @@ class Training
     }
     
     public function test2() {
-      $title = 'TEST2';
-      return ['template' => 'test2.html.php', 'title' => $title];
+      if(strpos($_SERVER['REQUEST_URI'], "eng")){
+        $title = 'TEST2(eng)';
+        return ['template' => 'test2.html.php', 'title' => $title];
+      }
+      elseif (strpos($_SERVER['REQUEST_URI'], "spn")) {
+        $title = 'TEST2(spn)';
+        return ['template' => 'test2.html.php', 'title' => $title];
+      }
+      else{
+        $title = 'TEST2(kor)';
+        return ['template' => 'test2.html.php', 'title' => $title];
+      }
     }
 
     public function test3() {
