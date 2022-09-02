@@ -390,6 +390,7 @@ class Training
     //   return ['template' => 'review3(spn).html.php', 'title' => $title];
     // }
 
+
     public function test1() {
       if(strpos($_SERVER['REQUEST_URI'], "eng")){
         $title = 'TEST(eng)';

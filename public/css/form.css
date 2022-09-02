@@ -56,7 +56,8 @@ input#email, input#name, input#password {
   /* width: 600px; */
   height: 650px;
   background-image: url("../images/access_denied.png");
-  background-size: 300px;
+  background-image: url("../images/sad_dog.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
 }

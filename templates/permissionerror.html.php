@@ -5,3 +5,9 @@
   <p>This page is only for an administrator.</p> 
   <p>Please sign in with the admin account.</p> 
 </div>
+
+<style>
+  main{
+    padding:0px;
+  }
+</style>
