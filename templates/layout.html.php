@@ -26,7 +26,7 @@
           <div class="container-fluid">
     
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <li class="nav-item" style="display:flex; margin-left: 150px;">
+                <li class="nav-item" style="display:flex; margin-left: 150px; flex-grow:1;">
                     <a class="navbar-brand page-scroll img-logo" href="/"><img style="position: relative; border-radius:15px;" src="/images/assi_logo_grey.png" alt="iLand" /></a>
                   </li>
               <div id="m_nav"><i class="fas fa-bars fa-3x" id="bar"></i></div>

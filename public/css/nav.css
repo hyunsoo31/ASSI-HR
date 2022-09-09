@@ -10,6 +10,7 @@
 .navbar-nav {
   flex-direction: row;
   align-items: center;
+  float: right;
 }
 .collapse {
   display: flex !important;
@@ -129,12 +130,16 @@ nav.active li:hover #sub-menu2{
   nav{
     border: 1px solid grey;
   }
+  .navbar-nav{
+    margin-right: 50px !important;
+  }
   /* nav.active{
     height: 100px !important;
   } */
   .navbar__menu {
    flex-direction: column !important;
    display: none !important; 
+
   }
   .nav-item{
     display: none !important;
