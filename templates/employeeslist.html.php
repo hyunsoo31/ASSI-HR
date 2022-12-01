@@ -117,7 +117,7 @@
                       <?php if($temp < 0):?>
                         <a href="/employee/detail?id=<?=$employee->id?>"> <i class="fa-solid fa-exclamation-triangle" style="color:red;"></i></a>     
             
-                      <?php elseif($temp < 30):?>
+                      <?php elseif($temp <= 30):?>
                         <a href="/employee/detail?id=<?=$employee->id?>"> <i class="fa-solid fa-exclamation-triangle" style="color:orange;"></i></a>     
                       <?php endif;?>  
                     <?php endif;?>
