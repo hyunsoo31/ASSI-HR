@@ -3,10 +3,6 @@ namespace Assi;
 class AssiRoutes implements \Rheebros\Routes
 {
 
-  // private $authorsTable;
-  // private $jokesTable;
-  // private $categoriesTable;
-  // private $authentication;
   private $employeesTable;
   private $trainingTable;
   private $employeeTrainingsTable;
@@ -18,36 +14,19 @@ class AssiRoutes implements \Rheebros\Routes
     include __DIR__ . '/../../includes/DatabaseConnection.php';
     $this -> employeesTable = new \Rheebros\DatabaseTable($pdo, 'employee', 'id', '\Assi\Entity\Employee',[&$this->trainingTable, &$this->employeeTrainingsTable]);
     $this->trainingTable = new \Rheebros\DatabaseTable($pdo, 'training','id', '\Assi\Entity\Training', [&$this->employeesTable, &$this->employeeTrainingsTable]);
-    //$this->employeeTrainingsTable =  new \Rheebros\DatabaseTable($pdo, 'training_information2', 'TR_ID');
     $this->employeeTrainingsTable =  new \Rheebros\DatabaseTable($pdo, 'employeetraining', 'id', '\Assi\Entity\EmployeeTraining', [&$this->employeesTable, &$this->trainingTable]);
-    // $this->programmingTable = new \Rheebros\DatabaseTable($pdo, 'programming', 'prog_id', '\Ijdb\Entity\Programming', [&$this->authorsTable, &$this->jokeCategoriesTbale]);
-    // $this->authorsTable =  new \Rheebros\DatabaseTable($pdo, 'author', 'id', '\Ijdb\Entity\Author', [&$this->jokesTable]);
-    // $this->categoriesTable =  new \Rheebros\DatabaseTable($pdo, 'category', 'id', '\Ijdb\Entity\Category', [&$this->jokesTable, &$this->jokeCategoriesTable]);
-    // $this->jokeCategoriesTable =  new \Rheebros\DatabaseTable($pdo, 'joke_category', 'categoryId');
     $this->authentication =  new \Rheebros\Authentication($this->employeesTable, 'EEID', 'password', 'firstName');
   }
 
   public function getRoutes(): array
   {
-    // 생성자로 옮겨서 삭제한 코드
-    // include __DIR__ . '/../../includes/DatabaseConnection.php';
-    // $jokesTable = new \Hanbit\DatabaseTable($pdo, 'joke', 'id');
-    // $authorsTable = new \Hanbit\DatabaseTable($pdo, 'author', 'id');
-    // $jokeController = new \Ijdb\Controllers\Joke($jokesTable, $authorsTable);
-    // $authorController = new \Ijdb\Controllers\Register($authorsTable);
+
 
     $trainingController = new \Assi\Controllers\Training($this->trainingTable);
     $registerController = new \Assi\Controllers\Register($this->employeesTable, $this->trainingTable, $this->authentication, $this->employeeTrainingsTable);
     $loginController = new \Assi\Controllers\Login($this->authentication);
     $employeeController = new \Assi\Controllers\Employee($this->employeesTable, $this->trainingTable, $this->authentication, $this->employeeTrainingsTable);
     $employeeTrainingController = new \Assi\Controllers\EmployeeTraining($this->employeesTable, $this->employeeTrainingsTable, $this->authentication);
-    // $categoryController = new \Assi\Controllers\Category($this->categoriesTable);
-
-    // $jokeController = new \Assi\Controllers\Joke($this->jokesTable, $this->authorsTable, $this->categoriesTable, $this->authentication);
-    // $programmingController = new \Assi\Controllers\Programming($this->programmingTable, $this->authorsTable, $this->categoriesTable, $this->authentication);
-    // $authorController = new \Assi\Controllers\Register($this->authorsTable);
-    // $loginController = new \Assi\Controllers\Login($this->authentication);
-    // $categoryController = new \Assi\Controllers\Category($this->categoriesTable);
 
     $routes = [
       'employees/permissions' => [
@@ -731,11 +710,6 @@ class AssiRoutes implements \Rheebros\Routes
 
     return $routes;
 
-    // $method = $_SERVER['REQUEST_METHOD'];
-    // $controller = $routes[$route][$method]['controller'];
-    // $action = $routes[$route][$method]['action'];
-
-    // return $controller->$action();
   }
 
   public function getAuthentication(): \Rheebros\Authentication
@@ -754,77 +728,5 @@ class AssiRoutes implements \Rheebros\Routes
   }
 
 
-    // public function callAction($route)
-    //   {
-    //     // include_once __DIR__ . '/../classes/Ijdb/DatabaseTable.php'; -> autoloader로 인해 필요 없어짐
-    //     include __DIR__ . '/../../includes/DatabaseConnection.php';
 
-
-
-    //     $jokesTable = new \Hanbit\DatabaseTable($pdo, 'joke', 'id');
-    //     $authorsTable = new \Hanbit\DatabaseTable($pdo, 'author', 'id');
-
-    //     $jokeController = new \Ijdb\Controllers\Joke($jokesTable, $authorsTable);
-
-    //     $routes = [
-    //       'joke/edit' => [
-    //         'POST' => [
-    //           'controller' => $jokeController,
-    //           'action' => 'saveEdit'
-    //         ],
-    //         'GET' => [
-    //           'controller' => $jokeController,
-    //           'action' => 'edit'
-    //         ]
-    //       ],
-    //       'joke/delete' => [
-    //         'POST' => [
-    //           'controller' => $jokeController,
-    //           'action' => 'delete'
-    //         ]
-    //       ],
-    //       'joke/ist' => [
-    //         'GET' => [
-    //           'controller' => $jokeController,
-    //           'action' => 'list'
-    //         ]
-    //       ],
-    //       '' => [
-    //         'GET' => [
-    //           'controller' => $jokeController,
-    //           'action' => 'home'
-    //         ]
-    //       ]
-    //     ];
-
-    //     $method = $_SERVER['REQUEST_METHOD'];
-
-    //     $controller = $routes[$route][$method]['controller'];
-    //     $action = $routes[$route][$method]['action'];
-
-    //     return $controller->$action();
-
-
-    //     // if($route === 'joke/list') {
-    //     //   // include __DIR__ . '/../classes/Controllers/Joke.php';
-    //     //   $controller = new \Ijdb\Controllers\Joke($jokesTable, $authorsTable);
-    //     //   $page = $controller->list();
-    //     // } else if ($route === '') {
-    //     //   // include __DIR__ .'/../classes/Controllers/Joke.php';
-    //     //   $controller = new \Ijdb\Controllers\Joke($jokesTable, $authorsTable);
-    //     //   $page = $controller->home();
-    //     // } else if ($route === 'joke/edit') {
-    //     //   // include __DIR__ .'/../classes/Controllers/Joke.php';
-    //     //   $controller = new \Ijdb\Controllers\Joke($jokesTable, $authorsTable);
-    //     //   $page = $controller->edit();
-    //     // } else if($route === 'joke/delete') {
-    //     //   // include __DIR__ . '/../classes/Controllers/Joke.php';
-    //     //   $controller = new \Ijdb\Controllers\Joke($jokesTable, $authorsTable);
-    //     //   $page = $controller->delete();
-    //     // } else if ($route === 'register') {
-    //     //   // include __DIR__ . '/../classes/Ijdb/Controllers/RegisterController.php';
-    //     //   $page = $controller -> showForm();
-    //     // }
-    //     // return $page;
-    //   }
 }
