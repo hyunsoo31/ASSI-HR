@@ -6,10 +6,10 @@ use Rheebros\DatabaseTable;
 class EmployeeTraining {
 	public $EEID;
 	public $TRID;
-  public $title;
-  public $result;
-  public $reulst_date;
-  public $deadline_date;
+	public $title;
+	public $result;
+	public $reulst_date;
+	public $deadline_date;
 
 	private $employeesTable;
 	//private $trainingTable;

@@ -15,7 +15,7 @@
 
   NAME : <?=htmlspecialchars($training->name, ENT_QUOTES, 'UTF-8')?><span style="font-weight: 800;">(<?=htmlspecialchars($training->title, ENT_QUOTES, 'UTF-8')?>)</span>
   <div style="width: 200px; margin-left:20px;">
-  DATE: <?=$training->dateOfUpdated?>
+  DATE: <?=$training->update_date?>
   </div>
   <span style="float:right;">
   <a href="/training/edit?id=<?=$training->id?>">EDIT</a>
@@ -55,13 +55,7 @@ KOR:
     <?php endif;?>
   <?php endforeach; ?>
   </button>
-  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">
-  <?php foreach($trainings as $training): ?>
-    <?php if($training->title == "T3"):?>
-      <?=$training->name?>
-    <?php endif;?>
-  <?php endforeach; ?>
-  </button>
+
   </div>
 <br>
 ENG:
@@ -80,13 +74,7 @@ ENG:
     <?php endif;?>
   <?php endforeach; ?>
   </button>
-  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">
-  <?php foreach($trainings as $training): ?>
-    <?php if($training->title == "T3"):?>
-      <?=$training->name?>
-    <?php endif;?>
-  <?php endforeach; ?>
-  </button>
+
   </div>
 <br>
 SPN:
@@ -105,12 +93,6 @@ SPN:
     <?php endif;?>
   <?php endforeach; ?>
   </button>
-  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">
-  <?php foreach($trainings as $training): ?>
-    <?php if($training->title == "T3"):?>
-      <?=$training->name?>
-    <?php endif;?>
-  <?php endforeach; ?>
-  </button>
+
   </div>
 </div>

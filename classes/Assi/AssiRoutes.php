@@ -29,6 +29,7 @@ class AssiRoutes implements \Rheebros\Routes
     $employeeTrainingController = new \Assi\Controllers\EmployeeTraining($this->employeesTable, $this->employeeTrainingsTable, $this->authentication);
 
     $routes = [
+
       'employees/permissions' => [
         'GET' => [
           'controller' => $registerController,
@@ -41,12 +42,14 @@ class AssiRoutes implements \Rheebros\Routes
         'login' => true,
         'permissions' => \Assi\Entity\Employee::EDIT_USER_ACCESS
       ],
+
       'permission/error' => [
         'GET' => [
           'controller' => $loginController,
           'action' => 'permissionError'
         ]
       ],
+      
       'employees/list' => [
         'GET' => [
           'controller' => $employeeController,
@@ -55,6 +58,7 @@ class AssiRoutes implements \Rheebros\Routes
         'login' => true,
         'permissions' => \Assi\Entity\Employee::LIST_USER
       ],
+
       'employee/permissions' => [
         'GET' => [
           'controller' => $registerController,
