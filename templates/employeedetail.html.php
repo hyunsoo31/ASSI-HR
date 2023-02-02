@@ -95,10 +95,10 @@
       <p style="margin-bottom:0.5rem; margin-top:1rem;"><span style="font-weight: 650;"> RESULT DATE: </span> <?=$employeetraining->result_date ?? 'No result'?>
        <p><span style="font-weight: 650;"> DEADLINE: </span><?=$employeetraining->deadline_date?><p><span style="font-weight:bold;">NEXT TRAINING :</span>
       <?php $temp = intval((strtotime($employeetraining->deadline_date)-strtotime(date("Y-m-d",time())))/86400);?>
-      <?php if ($temp>30):?>       
+      <?php if ($temp>14):?>       
       <?=$temp;?> days left<p>
       <?php endif;?>
-      <?php if($temp<=30 && $temp>0) :?>
+      <?php if($temp<=14 && $temp>0) :?>
       <?=$temp;?> days left<i class="fa-solid fa-exclamation-triangle" style="color:orange;"></i><p>
       <?php endif;?>
       <?php if ($temp<=0):?> 
@@ -121,14 +121,6 @@
       <?php endif; ?>
       <?php if($employeetraining->title == 'T2' && $employeetraining->result == "pass" && $temp>30):?>
         <button type="button" class="btn btn-outline-secondary" onclick="location.href='/certificate2?id=<?=$employee->id?>'">Certificate</button>
-      <?php endif; ?>
-      <?php if(($employeetraining->title == 'T3' && $employeetraining->result == "fail") || ($employeetraining->title == 'T3' && $employeetraining->result == "")  || ($employeetraining->title == 'T3' && $employeetraining->result == "pass" && $temp<=30)):?>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_kor'">T3(KOR)</button>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_eng'">T3(ENG)</button>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/training3_spn'">T3(SPN)</button>
-      <?php endif; ?>
-      <?php if($employeetraining->title == 'T3' && $employeetraining->result == "pass" && $temp>30):?>
-        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/certificate3?id=<?=$employee->id?>'">Certificate</button>
       <?php endif; ?>
     </div>
     <hr class="hr-2">

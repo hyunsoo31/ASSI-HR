@@ -86,6 +86,8 @@
       <tbody>
         <?php foreach ($employees as $employee): ?>
           <tr style="text-align:center;">
+          <?php if ($employee->terminationDate != null): ?>
+          <?php endif;?>
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->EEID;?></td>
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->firstName;?></td>
 
@@ -117,7 +119,7 @@
                       <?php if($temp < 0):?>
                         <a href="/employee/detail?id=<?=$employee->id?>"> <i class="fa-solid fa-exclamation-triangle" style="color:red;"></i></a>     
             
-                      <?php elseif($temp <= 30):?>
+                      <?php elseif($temp <= 14):?>
                         <a href="/employee/detail?id=<?=$employee->id?>"> <i class="fa-solid fa-exclamation-triangle" style="color:orange;"></i></a>     
                       <?php endif;?>  
                     <?php endif;?>

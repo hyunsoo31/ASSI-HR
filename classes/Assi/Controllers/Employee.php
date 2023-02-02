@@ -22,6 +22,7 @@ class Employee {
 
     $page = $_GET['page'] ?? 1;
     $offset = ($page-1)*10;
+    
     $author = $this-> authentication->getUser();
 
     // $trainings = $this->trainingTable->findAll();
@@ -59,26 +60,26 @@ class Employee {
       $title = '직원 목록';
     }
     elseif (isset($_GET['firstName'])) {
-      $employees = $this->employeesTable->find('firstName', $_GET['firstName'], '', 10, $offset);
-      $totalEmployees = $this->employeesTable->total('firstName', $_GET['firstName']);
+      $employees = $this->employeesTable->find2('firstName', $_GET['firstName'], '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total2('firstName', $_GET['firstName']);
       $numPages = ceil($totalEmployees/5);
       $title = '직원 목록';
     }
     elseif (isset($_GET['DEPT'])) {
-      $employees = $this->employeesTable->find('department', $_GET['DEPT'], '', 10, $offset);
-      $totalEmployees = $this->employeesTable->total('department', $_GET['DEPT']);
+      $employees = $this->employeesTable->find2('department', $_GET['DEPT'], '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total2('department', $_GET['DEPT']);
       $numPages = ceil($totalEmployees/5);
       $title = '직원 목록';
     }
     elseif (isset($_GET['lastName'])) {
-      $employees = $this->employeesTable->find('lastName', $_GET['lastName'], '', 10, $offset);
-      $totalEmployees = $this->employeesTable->total('lastName', $_GET['lastName']);
+      $employees = $this->employeesTable->find2('lastName', $_GET['lastName'], '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total2('lastName', $_GET['lastName']);
       $numPages = ceil($totalEmployees/5);
       $title = '직원 목록';
     }
     elseif (isset($_GET['position'])) {
-      $employees = $this->employeesTable->find('position', $_GET['position'], '', 10, $offset);
-      $totalEmployees = $this->employeesTable->total('position', $_GET['position']);
+      $employees = $this->employeesTable->find2('position', $_GET['position'], '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total2('position', $_GET['position']);
       $numPages = ceil($totalEmployees/5);
       $title = '직원 목록';
     }

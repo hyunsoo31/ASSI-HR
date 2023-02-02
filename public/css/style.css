@@ -145,7 +145,12 @@ blockquote form {  display: table-cell; width: 10%;}
   color: red;
   margin: 20px auto;
   overflow: auto;
-  width: 240px;
+  width: auto;
+  position: relative;
+}
+
+.errors li {
+  list-style: none;
 }
 
 .errors ul {

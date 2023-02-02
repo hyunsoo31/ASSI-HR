@@ -1,4 +1,4 @@
-<!--[if lt IE 9]><script src="https://cdn01.jotfor.ms/js/vendor/flashcanvas.js?3.3.35550" type="text/javascript"></script><![endif]-->
+[if lt IE 9]><script src="https://cdn01.jotfor.ms/js/vendor/flashcanvas.js?3.3.35550" type="text/javascript"></script><![endif]
   <script src="https://cdn02.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.35550" type="text/javascript"></script>
 <script src="https://cdn03.jotfor.ms/js/vendor/jSignature.min.noconflict.js?3.3.35550" type="text/javascript"></script>
 <script src="https://cdn01.jotfor.ms/js/vendor/jotform.signaturepad.js?3.3.35550" type="text/javascript"></script>

@@ -42,6 +42,20 @@ class DatabaseTable
       return $row[0];
     }
 
+    public function total2($field = null, $value = null) {
+      $sql = 'SELECT COUNT(*) FROM `' . $this->table . '`';
+      $parameters = [];
+
+      if (!empty($field)) {
+        $sql .= ' WHERE `' . $field . '` REGEXP :value';
+        $parameters = ['value' => $value];
+      }
+
+      $query = $this->query($sql, $parameters);
+      $row = $query->fetch();
+      return $row[0];
+    }
+
     public function total_store($field = null, $value = null) {
       $sql = 'SELECT COUNT(*) FROM `' . $this->table . '`';
       $parameters = [];
@@ -92,6 +106,30 @@ class DatabaseTable
       return $query -> fetchAll(\PDO::FETCH_CLASS, $this->className, $this->constructorArgs);
     }
 
+    public function find2($column, $value, $orderBy = null, $limit = null, $offset = null) {
+      $query = 'SELECT * FROM `' . $this->table . '`WHERE `' . $column . '` REGEXP :value';
+
+      $parameters = [
+        'value' => $value
+      ];
+
+      if ($orderBy != null) {
+        $query .= ' ORDER BY ' . $orderBy;
+      }
+
+      if ($limit != null) {
+        $query .= ' LIMIT ' . $limit;
+      }
+
+      if ($offset != null) {
+        $query .= ' OFFSET ' . $offset;
+      }
+
+      $query = $this->query($query, $parameters);
+
+      return $query -> fetchAll(\PDO::FETCH_CLASS, $this->className, $this->constructorArgs);
+    }
+
     //테이블의 모든 데이터 가져오기
     public function findAll($orderBy=null, $limit = null, $offset=null) {
       $query = 'SELECT * FROM `' . $this->table. '`';
@@ -100,7 +138,7 @@ class DatabaseTable
       if ($orderBy != null) {
         $query .= ' ORDER BY '. $orderBy;
       }
-      //한 페이지에 출력 유머 제한
+      //한 페이지에 출력 인원 제한
       if ($limit != null) {
         $query .= ' LIMIT ' . $limit;
       }

@@ -39,7 +39,7 @@
                   <a class="nav-link main_nav" aria-current="page" href="/employee/detail?id=<?=$author->id ?? null ?>">MY PAGE</a>
                   </li>
                   <?php if ($loggedIn): ?>
-                    <li class="nav-link dropdown">
+                    <!-- <li class="nav-link dropdown">
                       <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         ORIENTATION
                       </a>
@@ -48,8 +48,8 @@
                         <li><a class="dropdown-item" href="/orientation_eng">ORIENTATION(ENG)</a></li>
                         <li><a class="dropdown-item" href="/orientation_spn">ORIENTATION(SPN)</a></li>
                       </ul>
-                    </li>
-                    <li class="nav-link dropdown">
+                    </li> -->
+                    <!-- <li class="nav-link dropdown">
                       <a class="nav-link dropdown-toggle main_nav" href="/orientation_kor" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
                         INSURANCE
                       </a>
@@ -76,7 +76,7 @@
               
                       <?php endif;?>
                       </ul>
-                    </li>
+                    </li> -->
                     <?php endif; ?>
 
                   <?php if($loggedIn && $author->hasPermission(\Assi\Entity\Employee::LIST_TR)) : ?>
@@ -158,20 +158,20 @@ var list_all = document.getElementsByClassName('main_nav');
 
 
 if(current_location.match('employee') && !current_location.match('detail')) {
-  list_all[5].className += " active";
+  list_all[3].className += " active";
 }
 else if (current_location.match('employee/detail')) {
   list_all[1].className += " active";
 }
 else if (current_location.match('training')) {
-  list_all[4].className += " active";
-}
-else if (current_location.match('orientation')) {
   list_all[2].className += " active";
 }
-else if (current_location.match('insurance')) {
-  list_all[3].className += " active";
-}
+// else if (current_location.match('orientation')) {
+//   list_all[2].className += " active";
+// }
+// else if (current_location.match('insurance')) {
+//   list_all[3].className += " active";
+// }
 else{
   list_all[0].className += " active";
 }

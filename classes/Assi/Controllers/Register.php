@@ -35,7 +35,7 @@ class Register
 
     $employeetrainings = $_POST['employeeTraining'];
     $employeetrainings2 = $_POST['employeeTraining2'];
-    $employeetrainings3 = $_POST['employeeTraining3'];
+
     //데이터는 처음부터 유효하다고 가정
     $valid = true;
     $errors=[];
@@ -111,11 +111,11 @@ class Register
       $valid = false;
       $errors[] = 'payType을 입력해야 합니다.';
     }
-    if($author['EEID'] != $employeetrainings['EE_ID'] or $author['EEID'] != $employeetrainings2['EE_ID'] or $author['EEID'] != $employeetrainings3['EE_ID'] ) {
+    if($author['EEID'] != $employeetrainings['EE_ID'] or $author['EEID'] != $employeetrainings2['EE_ID']) {
       $valid = false;
       $errors[] = 'EEID 정보가 일치하지 않습니다.';
     }
-    if(empty($employeetrainings['deadline_date']) or empty($employeetrainings2['deadline_date']) or empty($employeetrainings3['deadline_date'])) {
+    if(empty($employeetrainings['deadline_date']) or empty($employeetrainings2['deadline_date'])) {
       $valid = false;
       $errors[] = '트레이닝 정보의 deadline을 입력해야 합니다.';
     }

@@ -93,8 +93,10 @@
  
 </form>
 </div>
+<?php if ($user->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)) :?>
   <input type="hidden" name="capture_image" value="">
   <input type="button" onclick="capture_html('capture')" value="save certificate" style="text-align: cetner;">
+  <?php endif;?>
 </div>
 <script>
 function capture_html(id){

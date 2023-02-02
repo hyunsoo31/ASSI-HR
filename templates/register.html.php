@@ -84,7 +84,7 @@ $(document).ready(function(){
                 </select>
                 <label for="department">Department</label>
                 <select name="author[department]" id="department" required>
-                  <option value="" disabled selected>DOL Status</option>
+                  <option value="" disabled selected>Department</option>
                   <option value="<?=$author['department'] ?? 'Office'?>">Office</option>
                   <option value="<?=$author['department'] ?? 'C/S'?>">C/S</option>
                   <option value="<?=$author['department'] ?? 'Cashier'?>">Cashier</option>
@@ -97,15 +97,16 @@ $(document).ready(function(){
                   <option value="<?=$author['department'] ?? 'Wholesale'?>">Wholesale</option>
                   <option value="<?=$author['department'] ?? 'Receiving'?>">Receiving</option>
                   <option value="<?=$author['department'] ?? 'IT'?>">IT</option>
+                  <option value="<?=$author['department'] ?? 'Helper'?>">Helper</option>
                 </select>
                 <label for="position">Position</label>
                 <select name="author[position]" id="position" required>
-                  <option value="" disabled selected>DOL Status</option>
+                  <option value="" disabled selected>Position</option>
                   <option value="<?=$author['position'] ?? 'Manager'?>">Manager</option>
                   <option value="<?=$author['position'] ?? 'Team Leader'?>">Team Leader</option>
                   <option value="<?=$author['position'] ?? 'Staff'?>">Staff</option>
                   <option value="<?=$author['position'] ?? 'Store Manager'?>">Store Manger</option>
-                  <option value="<?=$author['position'] ?? 'Assitant Store Manager'?>">Assitant Store Manger</option>
+                  <option value="<?=$author['position'] ?? 'Assitant Store Manager'?>">Store Assitant Manger</option>
                 </select>
                 <label for="hireDate">Hire Date</label>
                 <input name="author[hireDate]" id="hireDate" type="date" value = "<?=$author['hireDate'] ?? ''?>">
@@ -115,10 +116,17 @@ $(document).ready(function(){
                 <!-- <input name="author[store]" id="store" type="text" value = "<?=$author['store'] ?? ''?>"> -->
                 <select name="author[store]" id="store" required>
                   <option value="" disabled selected>Store</option>
+                  <option value="<?=$author['store'] ?? 'PA88'?>">PA88</option>
                   <option value="<?=$author['store'] ?? 'GA55'?>">GA55</option>
                   <option value="<?=$author['store'] ?? 'IL70'?>">IL70</option>
-                  <option value="<?=$author['store'] ?? 'PA88'?>">PA88</option>
                   <option value="<?=$author['store'] ?? 'HQ'?>">HQ</option>
+                </select>
+                <label for="permission">Permission</label>
+                <select name="author[permission]" id="permission" required>
+                  <option value="" disabled selected>permission</option>
+                  <option value="<?=$author['permission'] ?? '1'?>">1(PA88)</option>
+                  <option value="<?=$author['permission'] ?? '2'?>">2(GA55)</option>
+                  <option value="<?=$author['permission'] ?? '4'?>">4(IL70)</option>
                 </select>
                 <div class="submit_button">
                 <button type="submit" name="submit" value="SIGN UP" id="signup_submit" class="btn btn-outline-secondary sign-up-button">SIGN UP</button>
@@ -149,16 +157,6 @@ $(document).ready(function(){
               <input name="employeeTraining2[title]" id="title" type="text" value = "<?=$employeeTraining2['title'] ?? 'T2'?>">
               <label for="deadline_date">Deadline</label>
               <input name="employeeTraining2[deadline_date]" id="title" style="margin-bottom:20px;" type="date" value = "<?=$employeeTraining2['deadline_date'] ?? ''?>">
-
-              <input name="employeeTraining3[id]" id="id" type="hidden" value = "<?=$employeeTraining3['id'] ?? ''?>">
-              <label for="EEID">EEID</label>
-              <input name="employeeTraining3[EE_ID]" id="EEID4" type="text" value = "<?=$employeeTraining3['EE_ID'] ?? ''?>">
-              <!-- <label for="password">TRID</label> -->
-              <input name="employeeTraining3[TR_ID]" id="TRID" type="hidden" value = "<?=$employeeTraining3['TR_ID'] ?? '3'?>">
-              <label for="title">Title</label>
-              <input name="employeeTraining3[title]" id="title" type="text" value = "<?=$employeeTraining3['title'] ?? 'T3'?>">
-              <label for="deadline_date">Deadline</label>
-              <input name="employeeTraining3[deadline_date]" id="title" type="date" value = "<?=$employeeTraining3['deadline_date'] ?? ''?>">
             </div>
 
           </div>
@@ -168,7 +166,7 @@ $(document).ready(function(){
     if(!empty($errors)) :
       ?>
       <div class="errors">
-        <p>등록할 수 없습니다. 다음을 확인해 주세요.</p>
+        <p style="color:black">등록할 수 없습니다. 다음을 확인해 주세요.</p>
         <ul>
           <?php
           foreach ($errors as $error) :

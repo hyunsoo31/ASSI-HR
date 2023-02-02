@@ -39,7 +39,7 @@
           
         </div>
         <footer id="quiz_footer">
-          <p id="progress">PROGRESS</p>
+          <p id="progress">Progress</p>
         </footer>
 
       </div> <!--end quiz-->
@@ -49,7 +49,7 @@
 
     <?php if(strpos($_SERVER['REQUEST_URI'], "spn")): ?>
     <div class="grid">
-      <h1>퀴즈(스페인어)</h1>
+      <h1>Prueba</h1>
       <div id="quiz">
         <p id="question"></p>
         <div class="buttons">
@@ -60,7 +60,7 @@
           
         </div>
         <footer id="quiz_footer">
-          <p id="progress">PROGRESS</p>
+          <p id="progress">Progreso</p>
         </footer>
 
       </div> <!--end quiz-->
