@@ -68,10 +68,10 @@
         <span>Name</span> <span style="font-weight: 500; font-size: 15px; margin-left: 50px; color: black;">Jane Jihye Jeong</span>
       </label>
       <label>
-        <span>Email</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">jhjeong@assiplaza.net</span>
+        <span>Email</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">assihr@assiplaza.net</span>
       </label>
       <label>
-        <span>Phone</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">410-292-2424</span>
+        <span>Phone</span> <span style="font-weight: 500; font-size: 12px; margin-left: 50px; color: black;">240-762-7390</span>
       </label>
       </div>
       <!-- <button type="button" class="submit">Sign Up</button>

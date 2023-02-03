@@ -47,18 +47,18 @@ class Register
     }
     if(empty($author['EEID'])) {
       $valid = false;
-      $errors[] = '이메일을 입력해야 합니다.';
+      $errors[] = 'EEID를 입력해야 합니다.';
     } //이메일 유효성 검사
     // else if(filter_var($author['EEID'], FILTER_VALIDATE_EMAIL) == false ){
     //   $valid = false;
     //   $errors[] = '유효하지 않은 이메일 주소입니다.';
     // } //이메일이 유효하다면 중복 이메일 있는지 검사
     else {
-      $author['EEID'] = strtolower($author['EEID']);
+      // $author['EEID'] = strtolower($author['EEID']);
 
       if(count($this->employeesTable->find('EEID', $author['EEID'])) > 0) {
         $valid = false;
-        $errors[] = '이미 가입된 이메일 주소입니다.';
+        $errors[] = '이미 가입된 EEID 입니다.';
       }
     }
 
@@ -125,7 +125,6 @@ class Register
       $this->employeesTable->save($author);
       $this->employeeTrainingsTable->save($employeetrainings);
       $this->employeeTrainingsTable->save($employeetrainings2);
-      $this->employeeTrainingsTable->save($employeetrainings3);
       header('location: /employee/success');
     }
     else {
