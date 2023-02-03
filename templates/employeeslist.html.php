@@ -85,8 +85,11 @@
 
       <tbody>
         <?php foreach ($employees as $employee): ?>
-          <tr style="text-align:center;">
+     
           <?php if ($employee->terminationDate != null): ?>
+            <tr style="background-color:#ff070766; text-align:center;">
+          <?php else: ?>
+            <tr style="text-align:center;">
           <?php endif;?>
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->EEID;?></td>
             <td><a href="/employee/detail?id=<?=$employee->id?>"><?=$employee->firstName;?></td>
