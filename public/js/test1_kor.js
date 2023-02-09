@@ -92,11 +92,11 @@ function result(){
   if(score<11){
     txt += '<h2 ><a href="/fail1" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
     txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail1\'" style="font-size:2rem;">OK</button>';
-    txt += '<br>'
-    txt += userAnswerList;
-    txt += '<br>'
-    txt += correctAnswerList;
-    quiz_div.innerHTML = txt;
+    // txt += '<br>'
+    // txt += userAnswerList;
+    // txt += '<br>'
+    // txt += correctAnswerList;
+    // quiz_div.innerHTML = txt;
     document.querySelector('.score2').style.color = "red";
 
 
