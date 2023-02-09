@@ -83,6 +83,12 @@ class Employee {
       $numPages = ceil($totalEmployees/5);
       $title = '직원 목록';
     }
+    elseif (isset($_GET['probation'])) {
+      $employees = $this->employeesTable->find3('hireDate', 83, '', 10, $offset);
+      $totalEmployees = $this->employeesTable->total3('hireDate', 83);
+      $numPages = ceil($totalEmployees/5);
+      $title = '직원 목록';
+    }
     else {
       $employees = $this->employeesTable->findAll('', 10, $offset);
       //$employees = $this->employeesTable->findAll('dateOfHired DESC', 5, $offset);

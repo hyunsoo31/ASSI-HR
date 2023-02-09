@@ -55,18 +55,20 @@
           </div>
           <div class="grid-2">
             <button class="color-d circule" disabled>
-            <?php if($employee->DOLStatus == "Part-Time"):?>
-              <i class="fas fa-user-clock fa-2x"></i>
+            <?php $temp = intval((strtotime(date("Y-m-d",time()))-strtotime($employee->hireDate))/86400);?>
+            <?php if($temp<83):?>
+              <i class="fas fa-user-shield fa-2x" style="color:orange;"></i>
             <?php endif;?>
-            <?php if($employee->DOLStatus == "Full-Time"):?>
-              <i class="fas fa-user fa-2x"></i>
+            <?php if($temp>=83 && $temp <=90):?>
+              <i class="fas fa-user-shield fa-2x" style="color:red;"></i>
             <?php endif;?>
-            <?php if($employee->DOLStatus == "Commission Only"):?>
-              <i class="fas fa-user-check fa-2x"></i>
+            <?php if($temp>=91):?>
+              <i class="fas fa-user-shield fa-2x"></i>
             <?php endif;?>
             </button>
-            <p class="followers"><?=$employee->DOLStatus?></p>
-
+            <?php if($temp <=90): ?>
+              <p class="followers">D-<?=90-$temp?></p>
+            <?php endif;?>
           </div>
         </div>
       </div>

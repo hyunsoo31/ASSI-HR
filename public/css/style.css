@@ -173,7 +173,7 @@ input[type="checkbox"] + label {clear: right;}
 .jokelist .jokes {display: table-cell; padding: 1em;}
 
 .storelist{  
-  border: 1px solid #2b2c2c; margin-left:160px; 
+  border: 1px solid #2b2c2c; margin-left:50px; 
   /* width: 350px;  */
   height: 80%; text-align: center; float: right; border-radius: 20px; box-shadow: 3px 4px 2.5px -1px #5e6b78;}
 
@@ -181,6 +181,13 @@ input[type="checkbox"] + label {clear: right;}
   border: 1px solid #2b2c2c;
   margin-left: 10px;
   height: 80%; text-align: center; float: right; border-radius: 20px; box-shadow: 3px 4px 2.5px -1px #5e6b78;}
+
+.storelist3{  
+  border: 1px solid #2b2c2c;
+  margin-left: 10px;
+  height: 80%; 
+  width: 110px;
+  text-align: center; float: right; border-radius: 20px; box-shadow: 3px 4px 2.5px -1px #5e6b78;}
 
 .currentpage:before {
   content: "[";

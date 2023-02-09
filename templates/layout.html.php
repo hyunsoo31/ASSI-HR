@@ -14,7 +14,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
+  <script src="https://kit.fontawesome.com/b38c5cafb9.js" crossorigin="anonymous"></script>
   <title><?=$title?></title>
 </head>
 
@@ -91,7 +91,7 @@
                   <?php endif;?>
                 <div id="login_box" >
                 <?php if ($loggedIn): ?>
-                  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/employee/detail?id=<?=$author->id ?? null ?>'"><?php echo $_SESSION['userid']; ?></button>
+                  <button type="button" class="btn btn-outline-secondary" onclick="location.href='/employee/detail?id=<?=$author->id ?? null ?>'"><?php echo $author->lastName. ", " .$_SESSION['userid']; ?></button>
                   <button type="button" class="btn btn-outline-secondary" onclick="location.href='/logout'">Sign out</button>
                 <?php else: ?>
                 <button type="button" class="btn btn-outline-secondary" onclick="location.href='/login'">Sign in</button>

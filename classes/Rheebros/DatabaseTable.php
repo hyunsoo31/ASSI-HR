@@ -56,6 +56,21 @@ class DatabaseTable
       return $row[0];
     }
 
+    public function total3($field = null, $value = null) {
+      $sql = 'SELECT COUNT(*) FROM `' . $this->table . '`';
+      $parameters = [];
+
+      if (!empty($field)) {
+        $sql .= ' WHERE DATEDIFF(date_format(now(), \'%Y-%m-%d\'), '. $field . ') BETWEEN :value AND 90 ';
+        $parameters = ['value' => $value];
+      }
+
+      $query = $this->query($sql, $parameters);
+      $row = $query->fetch();
+      return $row[0];
+    }
+
+
     public function total_store($field = null, $value = null) {
       $sql = 'SELECT COUNT(*) FROM `' . $this->table . '`';
       $parameters = [];
@@ -112,6 +127,30 @@ class DatabaseTable
       $parameters = [
         'value' => $value
       ];
+
+      if ($orderBy != null) {
+        $query .= ' ORDER BY ' . $orderBy;
+      }
+
+      if ($limit != null) {
+        $query .= ' LIMIT ' . $limit;
+      }
+
+      if ($offset != null) {
+        $query .= ' OFFSET ' . $offset;
+      }
+
+      $query = $this->query($query, $parameters);
+
+      return $query -> fetchAll(\PDO::FETCH_CLASS, $this->className, $this->constructorArgs);
+    }
+    public function find3($column, $value, $orderBy = null, $limit = null, $offset = null) {
+      $query = 'SELECT * FROM `' . $this->table . '`WHERE DATEDIFF(date_format(now(), \'%Y-%m-%d\'), '. $column . ') BETWEEN :value AND 90 ';
+
+      $parameters = [
+        'value' => $value,
+      ];
+     
 
       if ($orderBy != null) {
         $query .= ' ORDER BY ' . $orderBy;

@@ -56,6 +56,12 @@
             <li class="DOL_nav"><a href="/employees/list?page=1&DOLStatus=Part-Time">PART-TIME</a><li>
         </ul>
         </div>
+        <div class="storelist3">
+        <h3>Probation</h3>
+        <ul class="store">
+            <li class="probation_nav"><a href="/employees/list?page=1&probation=true">D-7</a><li>
+        </ul>
+        </div>
       
      </div>
     </form>
@@ -77,6 +83,7 @@
         <th>STORE</th>
         <th>EDIT</th>
         <th>INFO</th>
+        <th>PROBATION</th>
         <?php if ($author->hasPermission(\Assi\Entity\Employee::DELETE_USER)) :?>
          <th>PERMISSION</th>
          <th>DELETE</th>
@@ -128,6 +135,17 @@
                     <?php endif;?>
                    <?php endforeach;?>
                   </td>
+
+                  <td>
+             
+                      <?php $temp = intval((strtotime(date("Y-m-d",time()))-strtotime($employee->hireDate))/86400);?>
+                        <?php if ($temp >= 83 && $temp <=90):?>
+                          <a href="/employee/detail?id=<?=$employee->id?>"> <i class="fas fa-user-shield" style="color:red;"></i></a>
+                        <?php endif;?> 
+               
+                
+                  </td>
+
                   <?php if ($author->hasPermission(\Assi\Entity\Employee::EDIT_USER_ACCESS)) :?>
                     <td><?=$employee->permission;?> 
                     <?php endif;?>
@@ -157,7 +175,7 @@
      <?php
 
     $numPages = ceil($totalEmployees/10);
-
+  
 
     for ($i = 1; $i <= $numPages; $i++):
       if ($i == $currentPage):
@@ -167,6 +185,7 @@
       <a href="/employees/list?page=<?=$i?><?=!empty($_GET['store']) ? '&store=' . $store : '' ?><?=!empty($_GET['firstName']) ? '&firstName=' . $_GET['firstName'] : '' ?>
 <?=!empty($_GET['DEPT']) ? '&DEPT=' . $_GET['DEPT'] : '' ?><?=!empty($_GET['lastName']) ? '&lastName=' . $_GET['lastName'] : '' ?>
 <?=!empty($_GET['position']) ? '&position=' . $_GET['position'] : '' ?>
+<?=!empty($_GET['probation']) ? '&probation=' . $_GET['probation'] : '' ?>
 <?=!empty($_GET['DOLStatus']) ? '&DOLStatus=' . $_GET['DOLStatus'] : '' ?>"><?=$i?></a>
     <?php endif; ?>
     <?php endfor; ?>
@@ -191,6 +210,7 @@
    //console.log(current_location_temp);
   var list_all = document.getElementsByClassName('store_nav');
   var list_all2 = document.getElementsByClassName('DOL_nav');
+  var probation = document.getElementsByClassName('probation_nav');
 
   for (i=0; i<list_all.length; i++) {
   
@@ -220,7 +240,7 @@
     }
   }
 
-  for (i=0; i<list_all2.length; i++) {
+for (i=0; i<list_all2.length; i++) {
   
   if (current_location.indexOf("Full-Time") != -1) {
     list_all2[0].className += " active";
@@ -235,7 +255,16 @@
     list_all2[0].classList.remove("active");
     list_all2[1].classList.remove("active");
   }
+
 }
 
-  </script>
+if (current_location.indexOf("probation") != -1) {
+  probation[0].className += " active";
+}
+else {
+  probation[0].classList.remove("active");
+}
+
+
+</script>
 </html>
