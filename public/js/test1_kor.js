@@ -44,6 +44,11 @@
 
 var quiz = new Quiz(questions);
 
+correctAnswerList= []
+for (var i = 0; i<13; i++){
+  correctAnswerList.push(questions[i].answer);
+
+}
 
 function update_quiz(){
   var question = document.getElementById('question');
@@ -87,8 +92,10 @@ function result(){
   if(score<11){
     txt += '<h2 ><a href="/fail1" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
     txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail1\'" style="font-size:2rem;">OK</button>';
-    // txt += '<br>'
-    // txt += answerList;
+    txt += '<br>'
+    txt += userAnswerList;
+    txt += '<br>'
+    txt += correctAnswerList;
     quiz_div.innerHTML = txt;
     document.querySelector('.score2').style.color = "red";
 
@@ -103,12 +110,12 @@ function result(){
   }
 }
 
-var answerList = [];
+var userAnswerList = [];
 
 function checkAnswer(i){
   btn[i].addEventListener('click', function(){
     var answer = btn[i].innerText;
-    answerList.push(answer);
+    userAnswerList.push(answer);
     if(quiz.correctAnswer(answer)){
       // alert('정답입니다');
       quiz.score++;
