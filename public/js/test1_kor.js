@@ -25,7 +25,7 @@
 
   new Question('동료가 성희롱을 당했다고 말하면 당신은 어떻게 해야하는가?', ['a. 사건을 웃어 넘기며 가해자로 지목된 사람을 옹호한다.', 'b. 회사 정책을 이야기하고, 인사 담당자에게 보고해야 한다고 말한다.', 'c.즉시 인사과에 연락해 가해자의 해고를 요청한다.', 'd. 동료의 행동을 과민반응이라고 말한 뒤 지목된 가해자에게 가서 동료가 그를 비난한다고 전한다. ' ], 'b. 회사 정책을 이야기하고, 인사 담당자에게 보고해야 한다고 말한다.'),
 
-  new Question('당신이 직장내에서 당하는 괴롭힘이 (성)희롱으로 성립이 되려면?', ['a. 심히 불쾌햐아 한다.', 'b. 원치 않은 것이어야 한다', 'c. A와 B 모두 해당', 'd.	남녀 사이의 일이어야만 한다'], 'c. A와 B 모두 해당'),
+  new Question('당신이 직장내에서 당하는 괴롭힘이 (성)희롱으로 성립이 되려면?', ['a. 심히 불쾌해야 한다.', 'b. 원치 않은 것이어야 한다', 'c. A와 B 모두 해당', 'd.	남녀 사이의 일이어야만 한다'], 'c. A와 B 모두 해당'),
 
   new Question('직장내에서 성적인 발언 및 성적 농담을 하여 근무환경의 분위기를 흐리는 것은 어떤 종류의 성희롱에 속하는가? ', ['a. 대가성(Quid Pro Quo) 성희롱', 'b. 적대적 환경 성희롱(Work Hostile Environment)', 'c.	일반적인 사무 환경', 'd. A와 B 모두 해당'], 'b. 적대적 환경 성희롱(Work Hostile Environment)'),
 
@@ -44,10 +44,11 @@
 
 var quiz = new Quiz(questions);
 
-correctAnswerList= []
+var correctAnswerList= []
+var questionsList = []
 for (var i = 0; i<13; i++){
   correctAnswerList.push(questions[i].answer);
-
+  questionsList.push(questions[i].text);
 }
 
 function update_quiz(){
@@ -83,25 +84,35 @@ function result(){
 
   var per = parseInt((quiz.score*100)/quiz.questions.length);
 
-  var score = parseInt(quiz.score)
+  var score = parseInt(quiz.score);
 
-  var txt = '<h1 style="padding:0.5em;">RESULT</h1>' +'<span style="font-size: 35px">'+quiz.score + '/' + quiz.questions.length+'</span>'+ '<h1 id="score"">YOUR SCORE: </h1>' +'<h1 class="score2"  style="padding-top:0;">'+per+'%</h1>';
+  var txt = '<h1 style="padding:0.5em;">결과</h1>' +'<span style="font-size: 35px">'+quiz.score + '/' + quiz.questions.length+'</span>'+ '<h1 id="score"">당신의 점수: </h1>' +'<h1 class="score2"  style="padding-top:0;">'+per+'%</h1>';
 
   quiz_div.innerHTML = txt;
 
   if(score<11){
     txt += '<h2 ><a href="/fail1" style="color:red; font-size:40px; text-decoration: none;" >FAIL</a></h2>';
     txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/fail1\'" style="font-size:2rem;">OK</button>';
-    // txt += '<br>'
-    // txt += userAnswerList;
-    // txt += '<br>'
-    // txt += correctAnswerList;
-    // quiz_div.innerHTML = txt;
+    quiz_div.innerHTML = txt;
     document.querySelector('.score2').style.color = "red";
 
 
   } else {
     txt += '<h2><a href="/pass1" style="color:green; font-size:40px; text-decoration: none;">PASS</h2>';
+    txt += '<h1>정답 및 해설</h1>'
+    txt += '<table class="table">'
+    txt += '<tbody>'
+    txt += '<thead> <tr>'+ '<th style="width: 250px;"> 문제 </th>'+ '<th> 정답 </th>' + '<th> 나의 답 </th>' + '<th>정답 여부</th>' + '</tr> </thead>'
+  
+    for (var i = 0; i<13; i++){
+      var anwerResult="";
+      if (correctAnswerList[i]==userAnswerList[i])
+      {answerResult = '<i class="fa-solid fa-o" style="color: green;"></i>';}
+      else{answerResult = '<i class="fa-solid fa-x" style="color: red;"></i>';}
+      txt += '<tr>'+ '<td>' + questionsList[i] + '</td>'+ '<td>'+correctAnswerList[i] +'</td>' + '<td>' + userAnswerList[i] + '</td>'+ '<td>' + answerResult +'</td>'+'</tr>'
+    }
+    txt += '</tbody>'
+    txt += '</table>'
     txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/pass1\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;
     // document.getElementById('score').style.color = "green";

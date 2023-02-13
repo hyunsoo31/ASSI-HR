@@ -10,7 +10,7 @@
   
 <?php if(strpos($_SERVER['REQUEST_URI'], "training1") && strpos($_SERVER['REQUEST_URI'], "kor")): ?>
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRZ5TDS2OLV3mwQFIUApbI37FggJFFszxKc1Q_RWkplGxDOsHie8lsZPE1BE5YNU0FBuzitUF9e7oy2/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1080" height="649" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <h3 style="color: black;">When you are ready for the test, click the button to take the test.</h3>
+    <h3 style="color: black;">시험을 볼 준비가 되었으면, 아래 TEST버튼을 클릭해주십시오.</h3>
     <button type="button" class="btn btn-outline-secondary test_button" onclick="location.href='/test1_kor'">TEST</button>
 <?php endif;?>
 <?php if(strpos($_SERVER['REQUEST_URI'], "training1") && strpos($_SERVER['REQUEST_URI'], "eng")): ?>
@@ -20,7 +20,7 @@
 <?php endif;?>
 <?php if(strpos($_SERVER['REQUEST_URI'], "training1") && strpos($_SERVER['REQUEST_URI'], "spn")): ?>
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTqxxhZDGiFbjQhIocPmYJ7Hc8xNdpNcXkMDc10fTpS44eHCkTy6aTNa6wKaVCngUHuJbR7OVRuhvvZ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1080" height="649" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <h3 style="color: black;">When you are ready for the test, click the button to take the test.</h3>
+    <h3 style="color: black;">Cuando esté listo para la prueba, haga clic en el botón para realizar la prueba.</h3>
     <button type="button" class="btn btn-outline-secondary test_button" onclick="location.href='/test1_spn'">TEST</button>
 <?php endif;?>
 

@@ -44,13 +44,20 @@
 
 var quiz = new Quiz(questions);
 
+var correctAnswerList= []
+var questionsList = []
+for (var i = 0; i<13; i++){
+  correctAnswerList.push(questions[i].answer);
+  questionsList.push(questions[i].text);
+}
+
 
 function update_quiz(){
   var question = document.getElementById('question');
   var idx = quiz.questionIndex + 1;
   var choice = document.querySelectorAll('.btn_test');
 
-  question.innerHTML = 'pregunta' + idx +') ' + quiz.questions[quiz.questionIndex].text;
+  question.innerHTML = 'Pregunta ' + idx +') ' + quiz.questions[quiz.questionIndex].text;
 
   for (var i=0; i<4; i++){
     
@@ -70,7 +77,7 @@ var btn = document.querySelectorAll('.btn_test')
 
 function progress(){
   var progress = document.getElementById('progress');
-  progress.innerHTML = 'pregunta '+ (quiz.questionIndex+1) + ' /'+ quiz.questions.length;
+  progress.innerHTML = 'Pregunta '+ (quiz.questionIndex+1) + ' /'+ quiz.questions.length;
 }
 
 function result(){
@@ -80,7 +87,7 @@ function result(){
 
   var score = parseInt(quiz.score)
 
-  var txt = '<h1 style="padding:0.5em;">RESULT</h1>' +'<span style="font-size: 35px">'+quiz.score + '/' + quiz.questions.length+'</span>'+ '<h1 id="score"">YOUR SCORE: </h1>' +'<h1 class="score2"  style="padding-top:0;">'+per+'%</h1>';
+  var txt = '<h1 style="padding:0.5em;">Resultado</h1>' +'<span style="font-size: 35px">'+quiz.score + '/' + quiz.questions.length+'</span>'+ '<h1 id="score"">Tu puntuación: </h1>' +'<h1 class="score2"  style="padding-top:0;">'+per+'%</h1>';
 
   quiz_div.innerHTML = txt;
 
@@ -93,6 +100,20 @@ function result(){
 
   } else {
     txt += '<h2><a href="/pass1" style="color:green; font-size:40px; text-decoration: none;">PASS</h2>';
+    txt += '<h1>Respuestas y explicaciones</h1>'
+    txt += '<table class="table">'
+    txt += '<tbody>'
+    txt += '<thead> <tr>'+ '<th style="width: 250px;"> Pregunta </th>'+ '<th> Respuesta correcta </th>' + '<th> Tu respuesta </th>' + '<th> Controlar </th>' + '</tr> </thead>'
+  
+    for (var i = 0; i<13; i++){
+      var anwerResult="";
+      if (correctAnswerList[i]==userAnswerList[i])
+      {answerResult = '<i class="fa-solid fa-o" style="color: green;"></i>';}
+      else{answerResult = '<i class="fa-solid fa-x" style="color: red;"></i>';}
+      txt += '<tr>'+ '<td>' + questionsList[i] + '</td>'+ '<td>'+correctAnswerList[i] +'</td>' + '<td>' + userAnswerList[i] + '</td>'+ '<td>' + answerResult +'</td>'+'</tr>'
+    }
+    txt += '</tbody>'
+    txt += '</table>'
     txt += '<button type="button" class="btn btn-outline-secondary" onclick="location.href=\'/pass1\'" style="font-size:2rem;">OK</button>';
     quiz_div.innerHTML = txt;
     // document.getElementById('score').style.color = "green";
@@ -101,10 +122,13 @@ function result(){
   }
 }
 
+var userAnswerList = [];
+
 
 function checkAnswer(i){
   btn[i].addEventListener('click', function(){
     var answer = btn[i].innerText;
+    userAnswerList.push(answer);
 
     if(quiz.correctAnswer(answer)){
       // alert('정답입니다');
